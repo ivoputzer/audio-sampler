@@ -62,16 +62,90 @@
                                     <outlet property="delegate" destination="2" id="OUe-be-7gF"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="music.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3nh-sK-Pvt">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="music.png" translatesAutoresizingMaskIntoConstraints="NO" id="uZz-hY-mMM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="FdQ-0e-bFy"/>
+                                    <constraint firstAttribute="height" constant="128" id="KPf-sU-ZAS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TITOLO:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngv-XE-SYO">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="75y-xx-bZb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ARTISTA:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srV-aN-3At">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DURATA:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jJ-as-7oB">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="INFO:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6H-Rm-I3z">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="y8d-Od-tdS">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="5J6-Uy-0r1"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="rewind.png" translatesAutoresizingMaskIntoConstraints="NO" id="kc4-Gz-dkH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Hy4-cC-pKA"/>
+                                    <constraint firstAttribute="height" constant="90" id="Imx-L0-4Uy"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="forward.png" translatesAutoresizingMaskIntoConstraints="NO" id="TAU-Wr-8Oh"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-Aa-5G3">
+                                <color key="minimumTrackTintColor" red="0.023529414089999999" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="thumbTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ngv-XE-SYO" firstAttribute="leading" secondItem="uZz-hY-mMM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="28C-fx-tHj"/>
+                            <constraint firstItem="uZz-hY-mMM" firstAttribute="centerX" secondItem="Kce-sx-iAh" secondAttribute="centerX" type="default" id="4gQ-CQ-mBu"/>
+                            <constraint firstItem="Y6H-Rm-I3z" firstAttribute="leading" secondItem="uZz-hY-mMM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5Cc-10-bYJ"/>
+                            <constraint firstItem="1jJ-as-7oB" firstAttribute="leading" secondItem="uZz-hY-mMM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="7fd-O1-btd"/>
                             <constraint firstItem="QOn-wp-FmC" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="8fx-zN-MiL"/>
+                            <constraint firstItem="srV-aN-3At" firstAttribute="top" secondItem="ngv-XE-SYO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9Qq-iV-luT"/>
+                            <constraint firstItem="1jJ-as-7oB" firstAttribute="top" secondItem="srV-aN-3At" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Dln-CW-60w"/>
                             <constraint firstItem="Kce-sx-iAh" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="FdO-gC-gAk"/>
+                            <constraint firstItem="3nh-sK-Pvt" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="GDa-IL-UCd"/>
+                            <constraint firstAttribute="bottom" secondItem="Kdb-Aa-5G3" secondAttribute="bottom" constant="238" id="GNC-W6-0ZF"/>
+                            <constraint firstItem="y8d-Od-tdS" firstAttribute="centerX" secondItem="3nh-sK-Pvt" secondAttribute="centerX" type="default" id="H5O-px-JN3"/>
                             <constraint firstItem="Kce-sx-iAh" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="HSc-Bg-gpn"/>
+                            <constraint firstItem="Kdb-Aa-5G3" firstAttribute="centerX" secondItem="y8d-Od-tdS" secondAttribute="centerX" type="default" id="ISw-Gf-lbf"/>
                             <constraint firstItem="QOn-wp-FmC" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="IxM-wa-jX6"/>
+                            <constraint firstItem="kc4-Gz-dkH" firstAttribute="centerY" secondItem="QOn-wp-FmC" secondAttribute="centerY" type="default" id="J4q-aj-aFu"/>
+                            <constraint firstItem="y8d-Od-tdS" firstAttribute="leading" secondItem="kc4-Gz-dkH" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="LEI-OD-YWB"/>
+                            <constraint firstItem="Kdb-Aa-5G3" firstAttribute="leading" secondItem="kc4-Gz-dkH" secondAttribute="leading" type="default" id="MgZ-x9-JoB"/>
                             <constraint firstItem="Kce-sx-iAh" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="MqU-he-sSf"/>
+                            <constraint firstItem="TAU-Wr-8Oh" firstAttribute="leading" secondItem="y8d-Od-tdS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="OCk-6p-mEe"/>
                             <constraint firstItem="Kce-sx-iAh" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="OHg-7s-0ea"/>
+                            <constraint firstItem="kc4-Gz-dkH" firstAttribute="top" secondItem="y8d-Od-tdS" secondAttribute="top" type="default" id="PC7-q2-wUw"/>
+                            <constraint firstItem="Y6H-Rm-I3z" firstAttribute="top" secondItem="1jJ-as-7oB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QDo-rj-h9J"/>
+                            <constraint firstItem="uZz-hY-mMM" firstAttribute="top" secondItem="5" secondAttribute="top" constant="97" id="Ros-oK-bJn"/>
+                            <constraint firstItem="Kdb-Aa-5G3" firstAttribute="trailing" secondItem="TAU-Wr-8Oh" secondAttribute="trailing" type="default" id="U1R-qE-LRp"/>
                             <constraint firstItem="QOn-wp-FmC" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="VbK-HM-7id"/>
+                            <constraint firstItem="kc4-Gz-dkH" firstAttribute="bottom" secondItem="y8d-Od-tdS" secondAttribute="bottom" type="default" id="XAd-jd-qXx"/>
+                            <constraint firstItem="y8d-Od-tdS" firstAttribute="top" secondItem="TAU-Wr-8Oh" secondAttribute="top" type="default" id="aQn-98-IQx"/>
+                            <constraint firstItem="ngv-XE-SYO" firstAttribute="top" secondItem="5" secondAttribute="top" constant="108" id="fjD-kM-zRo"/>
+                            <constraint firstItem="3nh-sK-Pvt" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="nlr-qp-NbK"/>
+                            <constraint firstItem="TAU-Wr-8Oh" firstAttribute="bottom" secondItem="y8d-Od-tdS" secondAttribute="bottom" type="default" id="npc-EP-fJb"/>
+                            <constraint firstItem="3nh-sK-Pvt" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="p6g-zZ-TQX"/>
+                            <constraint firstItem="3nh-sK-Pvt" firstAttribute="leading" secondItem="QOn-wp-FmC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="q0Y-oX-rgU"/>
+                            <constraint firstItem="srV-aN-3At" firstAttribute="leading" secondItem="uZz-hY-mMM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="q9n-Eb-VQ8"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -102,8 +176,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="forward.png" width="512" height="512"/>
+        <image name="music.jpg" width="512" height="512"/>
         <image name="music.png" width="512" height="512"/>
         <image name="pattern.jpg" width="1920" height="1200"/>
+        <image name="play.png" width="512" height="512"/>
+        <image name="rewind.png" width="512" height="512"/>
     </resources>
     <classes>
         <class className="CustomCell" superclassName="UITableViewCell">

@@ -21,6 +21,10 @@
 		2EAF8F58171C552B0011B0F9 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF8F57171C552B0011B0F9 /* CustomCell.m */; };
 		2EAF8F5A171C55B10011B0F9 /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EAF8F59171C55B10011B0F9 /* music.png */; };
 		2EAF8F5E171C5AA60011B0F9 /* pattern.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EAF8F5D171C5AA60011B0F9 /* pattern.jpg */; };
+		2EAF8F62171C60100011B0F9 /* music.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EAF8F61171C60100011B0F9 /* music.jpg */; };
+		2EAF8F64171C646A0011B0F9 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EAF8F63171C646A0011B0F9 /* play.png */; };
+		2EAF8F66171C646F0011B0F9 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EAF8F65171C646F0011B0F9 /* forward.png */; };
+		2EAF8F68171C64730011B0F9 /* rewind.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EAF8F67171C64730011B0F9 /* rewind.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		2EAF8F57171C552B0011B0F9 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCell.m; path = sampler/CustomCell.m; sourceTree = SOURCE_ROOT; };
 		2EAF8F59171C55B10011B0F9 /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
 		2EAF8F5D171C5AA60011B0F9 /* pattern.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pattern.jpg; sourceTree = "<group>"; };
+		2EAF8F61171C60100011B0F9 /* music.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = music.jpg; sourceTree = "<group>"; };
+		2EAF8F63171C646A0011B0F9 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		2EAF8F65171C646F0011B0F9 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		2EAF8F67171C64730011B0F9 /* rewind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewind.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,10 @@
 			children = (
 				2EAF8F59171C55B10011B0F9 /* music.png */,
 				2EAF8F5D171C5AA60011B0F9 /* pattern.jpg */,
+				2EAF8F61171C60100011B0F9 /* music.jpg */,
+				2EAF8F63171C646A0011B0F9 /* play.png */,
+				2EAF8F67171C64730011B0F9 /* rewind.png */,
+				2EAF8F65171C646F0011B0F9 /* forward.png */,
 				2EAF8F39171C4FBF0011B0F9 /* Sampler */,
 				2EAF8F32171C4FBF0011B0F9 /* Frameworks */,
 				2EAF8F31171C4FBF0011B0F9 /* Products */,
@@ -176,6 +188,10 @@
 				2EAF8F4D171C4FBF0011B0F9 /* MainStoryboard.storyboard in Resources */,
 				2EAF8F5A171C55B10011B0F9 /* music.png in Resources */,
 				2EAF8F5E171C5AA60011B0F9 /* pattern.jpg in Resources */,
+				2EAF8F62171C60100011B0F9 /* music.jpg in Resources */,
+				2EAF8F64171C646A0011B0F9 /* play.png in Resources */,
+				2EAF8F66171C646F0011B0F9 /* forward.png in Resources */,
+				2EAF8F68171C64730011B0F9 /* rewind.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
