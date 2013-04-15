@@ -19,9 +19,6 @@
 {
     [super viewDidLoad];
     
-    /* questo è un commento di ivo */
-    /* questo è mio */
-    /* vediamo se git regge */
     _objects =[[NSMutableArray alloc]initWithArray:@[@"Track 1", @"Track 2"]];
 	// Do any additional setup after loading the view, typically from a nib.
     
