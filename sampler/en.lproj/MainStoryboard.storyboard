@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="bXm-zv-dhp">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QOn-wp-FmC">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="XCZ-mD-od7"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="TOM-Ze-RqB" customClass="CustomCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="music.png" translatesAutoresizingMaskIntoConstraints="NO" id="LWe-pg-ekQ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="59" id="5xm-Mg-esb"/>
+                                                        <constraint firstAttribute="height" constant="59" id="PmK-l8-Gf5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxL-fs-Hhk">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="228" id="3nv-Mr-U4v"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="cxL-fs-Hhk" firstAttribute="centerY" secondItem="TOM-Ze-RqB" secondAttribute="centerY" type="default" id="22y-QC-LET"/>
+                                            <constraint firstItem="cxL-fs-Hhk" firstAttribute="top" secondItem="TOM-Ze-RqB" secondAttribute="top" constant="20" type="default" id="FiV-fY-xqJ"/>
+                                            <constraint firstItem="cxL-fs-Hhk" firstAttribute="leading" secondItem="LWe-pg-ekQ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="IjB-sG-abE"/>
+                                            <constraint firstAttribute="trailing" secondItem="cxL-fs-Hhk" secondAttribute="trailing" constant="20" type="default" id="Nz8-v1-Gn9"/>
+                                            <constraint firstItem="LWe-pg-ekQ" firstAttribute="top" secondItem="TOM-Ze-RqB" secondAttribute="top" type="default" id="fcX-M7-Mck"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="trackLabel" destination="cxL-fs-Hhk" id="73E-er-IFI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="GOj-jn-Yyo"/>
+                                    <outlet property="delegate" destination="2" id="OUe-be-7gF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QOn-wp-FmC" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="8fx-zN-MiL"/>
+                            <constraint firstItem="QOn-wp-FmC" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="IxM-wa-jX6"/>
+                            <constraint firstItem="QOn-wp-FmC" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="VbK-HM-7id"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="U6d-XV-vDB"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="-267"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jG3-de-18K">
+            <objects>
+                <navigationController id="bXm-zv-dhp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JGt-eD-vST">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="GTE-ei-pYb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKt-Sp-2Uv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-900" y="-267"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="music.png" width="512" height="512"/>
+    </resources>
+    <classes>
+        <class className="CustomCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="trackLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
