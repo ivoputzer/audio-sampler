@@ -17,9 +17,13 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="XCZ-mD-od7"/>
                                 </constraints>
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" id="Kce-sx-iAh">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="704"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="TOM-Ze-RqB" customClass="CustomCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="726" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>

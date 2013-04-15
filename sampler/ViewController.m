@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     /* questo è un commento di ivo */
+    /* questo è mio */
     
     _objects =[[NSMutableArray alloc]initWithArray:@[@"Track 1", @"Track 2"]];
 	// Do any additional setup after loading the view, typically from a nib.
