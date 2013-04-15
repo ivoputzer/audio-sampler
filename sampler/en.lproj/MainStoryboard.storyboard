@@ -12,18 +12,16 @@
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pattern.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Kce-sx-iAh"/>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QOn-wp-FmC">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="XCZ-mD-od7"/>
                                 </constraints>
-                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" id="Kce-sx-iAh">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="704"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="TOM-Ze-RqB" customClass="CustomCell">
-                                        <rect key="frame" x="0.0" y="726" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -40,12 +38,13 @@
                                                         <constraint firstAttribute="width" constant="228" id="3nv-Mr-U4v"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="cxL-fs-Hhk" firstAttribute="centerY" secondItem="TOM-Ze-RqB" secondAttribute="centerY" type="default" id="22y-QC-LET"/>
                                             <constraint firstItem="cxL-fs-Hhk" firstAttribute="top" secondItem="TOM-Ze-RqB" secondAttribute="top" constant="20" type="default" id="FiV-fY-xqJ"/>
@@ -67,7 +66,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QOn-wp-FmC" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="8fx-zN-MiL"/>
+                            <constraint firstItem="Kce-sx-iAh" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="FdO-gC-gAk"/>
+                            <constraint firstItem="Kce-sx-iAh" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="HSc-Bg-gpn"/>
                             <constraint firstItem="QOn-wp-FmC" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="IxM-wa-jX6"/>
+                            <constraint firstItem="Kce-sx-iAh" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="MqU-he-sSf"/>
+                            <constraint firstItem="Kce-sx-iAh" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="OHg-7s-0ea"/>
                             <constraint firstItem="QOn-wp-FmC" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="VbK-HM-7id"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -100,6 +103,7 @@
     </scenes>
     <resources>
         <image name="music.png" width="512" height="512"/>
+        <image name="pattern.jpg" width="1920" height="1200"/>
     </resources>
     <classes>
         <class className="CustomCell" superclassName="UITableViewCell">
