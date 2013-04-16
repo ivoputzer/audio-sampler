@@ -226,6 +226,7 @@
         <image name="pattern.jpg" width="1920" height="1200"/>
         <image name="play.png" width="512" height="512"/>
     </resources>
+<<<<<<< HEAD
     <classes>
         <class className="CustomCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
@@ -258,6 +259,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
         </class>
     </classes>
+=======
+>>>>>>> InsertImage
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
