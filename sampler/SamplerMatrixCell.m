@@ -20,27 +20,31 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame]; if (self) self.state = false; return self;
+    self = [super initWithFrame:frame];
+    
+    if (self)
+    {
+        self.state = false;
+    }
+
+    return self;    
 }
 
 
 -(void) color: (UIColor*) color
-{
-    // [self.image setAlpha:1];
+{    
+    [self.button setBackgroundColor: color];
 }
 
 /* --- Action Events --- */
 
 - (IBAction)click:(UIButton*)button
-{
+{    
     UIColor *color = self.state
-        ? [UIColor colorWithRed:0.0f/255.0f green:187.0f/255.0f blue:226.0f/255.0f alpha:1.0]
-        : [UIColor colorWithRed:35.0f/255.0f green:31.0f/255.0f blue:32.0f/255.0f alpha:1.0];
+    ? [UIColor colorWithRed:35.0f/255.0f green:31.0f/255.0f blue:32.0f/255.0f alpha:1.0]
+    : [UIColor colorWithRed:0.0f/255.0f green:187.0f/255.0f blue:226.0f/255.0f alpha:1.0];
     
-    
-    [button setBackgroundColor: color];
-        
-    self.state = !self.state; // toggler
+    [self color: color]; self.state = !self.state; // toggler
 }
 
 /*

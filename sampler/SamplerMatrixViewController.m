@@ -35,15 +35,6 @@
 
 /* --------------------------------- Collection View Delegate  --------------------------------- */
 
-- (BOOL)collectionView:(UICollectionView *)view didDeselectItemAtIndexPath:(NSIndexPath *)index
-{
-    SamplerMatrixCell *cell = [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
-    
-    [cell color:nil];
-    
-    return true;
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return 256;
@@ -51,7 +42,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)view cellForItemAtIndexPath:(NSIndexPath *)index
 {
-    return [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
+    SamplerMatrixCell *cell = [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
+    
+    [cell color: [UIColor colorWithRed:35.0f/255.0f green:31.0f/255.0f blue:32.0f/255.0f alpha:1.0]];
+    
+    return cell;
 }
 
 @end
