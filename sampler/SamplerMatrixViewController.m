@@ -9,7 +9,7 @@
 #import "SamplerMatrixViewController.h"
 #import "SamplerMatrixCell.h"
 
-@interface SamplerMatrixViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SamplerMatrixViewController () <UICollectionViewDelegate, UICollectionViewDataSource, AVAudioPlayerDelegate>
 
 @property NSMutableArray *samples;
 
@@ -33,16 +33,16 @@
     
     NSURL *url = [NSURL fileURLWithPath:
                   [[NSBundle mainBundle] pathForResource:@"dp_workit" ofType:@"wav"]];
-   
+       
     NSError *error = nil;
         
     AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     
-    [audio prepareToPlay];
+    [audio setDelegate: self];
     
-    [audio play];
+    [audio prepareToPlay]; [audio play]; [audio setNumberOfLoops: INT32_MAX];
     
-    NSLog(@"Error : %@", error);
+    NSLog(@"Error : %@", [error localizedDescription]);
     
     /*NSString* path = [[NSBundle mainBundle] pathForResource: @"dp_workit" ofType:@"wav"];
     
@@ -50,7 +50,7 @@
     
     AVPlayer* player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:path]];
     
-    [player play];
+    [player play];*/
     
     
     /*self.samples = [[NSMutableArray alloc]
@@ -64,8 +64,9 @@
     ];
     
     
+    */
     
-    // [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&amp;error];*/
+    // [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&amp;error];
     
     
 }
