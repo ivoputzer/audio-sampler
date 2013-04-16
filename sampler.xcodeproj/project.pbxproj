@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E745530171D5231006FDCA9 /* button_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E74552F171D5231006FDCA9 /* button_edit.png */; };
 		2EAF8F34171C4FBF0011B0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F33171C4FBF0011B0F9 /* UIKit.framework */; };
 		2EAF8F36171C4FBF0011B0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F35171C4FBF0011B0F9 /* Foundation.framework */; };
 		2EAF8F38171C4FBF0011B0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F37171C4FBF0011B0F9 /* CoreGraphics.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E74552F171D5231006FDCA9 /* button_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_edit.png; sourceTree = "<group>"; };
 		2EAF8F30171C4FBF0011B0F9 /* Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EAF8F33171C4FBF0011B0F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2EAF8F35171C4FBF0011B0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +104,7 @@
 				2EAF8F61171C60100011B0F9 /* music.jpg */,
 				2EAF8F63171C646A0011B0F9 /* play.png */,
 				2EAF8F67171C64730011B0F9 /* rewind.png */,
+				2E74552F171D5231006FDCA9 /* button_edit.png */,
 				2EAF8F65171C646F0011B0F9 /* forward.png */,
 				2EAF8F39171C4FBF0011B0F9 /* Sampler */,
 				2EAF8F32171C4FBF0011B0F9 /* Frameworks */,
@@ -265,6 +268,7 @@
 				2EED6D1B171D3462003B2709 /* dp_2makeit.wav in Resources */,
 				2EED6D1C171D3462003B2709 /* dp_3doit.wav in Resources */,
 				2EED6D1D171D3462003B2709 /* dp_4makesus.wav in Resources */,
+				2E745530171D5231006FDCA9 /* button_edit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
