@@ -243,7 +243,6 @@
         <class className="SamplerMatrixCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SamplerMatrixCell.h"/>
             <relationships>
-                <relationship kind="action" name="click:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button" candidateClass="UIButton"/>
             </relationships>
         </class>
