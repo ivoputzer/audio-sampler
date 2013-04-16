@@ -7,6 +7,7 @@
 //
 
 #import "SamplerMatrixViewController.h"
+#import "SamplerMatrixCell.h"
 
 @interface SamplerMatrixViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -34,6 +35,14 @@
 
 /* --------------------------------- Collection View Delegate  --------------------------------- */
 
+- (BOOL)collectionView:(UICollectionView *)view didDeselectItemAtIndexPath:(NSIndexPath *)index
+{
+    SamplerMatrixCell *cell = [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
+    
+    [cell color:nil];
+    
+    return true;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {

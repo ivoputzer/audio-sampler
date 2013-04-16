@@ -39,6 +39,7 @@
 		2EED6D1C171D3462003B2709 /* dp_3doit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2EED6D11171D3462003B2709 /* dp_3doit.wav */; };
 		2EED6D1D171D3462003B2709 /* dp_4makesus.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2EED6D12171D3462003B2709 /* dp_4makesus.wav */; };
 		2EED6D20171D3771003B2709 /* SamplerMatrixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EED6D1F171D3771003B2709 /* SamplerMatrixViewController.m */; };
+		2EED6D23171D4CED003B2709 /* SamplerMatrixCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EED6D22171D4CED003B2709 /* SamplerMatrixCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,8 @@
 		2EED6D12171D3462003B2709 /* dp_4makesus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dp_4makesus.wav; sourceTree = "<group>"; };
 		2EED6D1E171D3771003B2709 /* SamplerMatrixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SamplerMatrixViewController.h; path = sampler/SamplerMatrixViewController.h; sourceTree = SOURCE_ROOT; };
 		2EED6D1F171D3771003B2709 /* SamplerMatrixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SamplerMatrixViewController.m; path = sampler/SamplerMatrixViewController.m; sourceTree = SOURCE_ROOT; };
+		2EED6D21171D4CED003B2709 /* SamplerMatrixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SamplerMatrixCell.h; path = sampler/SamplerMatrixCell.h; sourceTree = SOURCE_ROOT; };
+		2EED6D22171D4CED003B2709 /* SamplerMatrixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SamplerMatrixCell.m; path = sampler/SamplerMatrixCell.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				2EAF8F3A171C4FBF0011B0F9 /* Supporting Files */,
 				2EED6D1E171D3771003B2709 /* SamplerMatrixViewController.h */,
 				2EED6D1F171D3771003B2709 /* SamplerMatrixViewController.m */,
+				2EED6D21171D4CED003B2709 /* SamplerMatrixCell.h */,
+				2EED6D22171D4CED003B2709 /* SamplerMatrixCell.m */,
 			);
 			path = Sampler;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				2EAF8F50171C4FBF0011B0F9 /* ViewController.m in Sources */,
 				2EAF8F58171C552B0011B0F9 /* CustomCell.m in Sources */,
 				2EED6D20171D3771003B2709 /* SamplerMatrixViewController.m in Sources */,
+				2EED6D23171D4CED003B2709 /* SamplerMatrixCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
