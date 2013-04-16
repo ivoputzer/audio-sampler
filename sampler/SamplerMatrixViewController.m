@@ -15,6 +15,7 @@
 
 @property NSMutableArray *matrix;
 
+
 @end
 
 @implementation SamplerMatrixViewController
@@ -29,15 +30,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.samples = [[NSMutableArray alloc]
+    
+    NSURL *url = [NSURL fileURLWithPath:
+                  [[NSBundle mainBundle] pathForResource:@"dp_workit" ofType:@"wav"]];
+   
+    NSError *error = nil;
+        
+    AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    
+    [audio prepareToPlay];
+    
+    [audio play];
+    
+    NSLog(@"Error : %@", error);
+    
+    /*NSString* path = [[NSBundle mainBundle] pathForResource: @"dp_workit" ofType:@"wav"];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path] == NO) NSLog (@"No file");
+    
+    AVPlayer* player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:path]];
+    
+    [player play];
+    
+    
+    /*self.samples = [[NSMutableArray alloc]
                     
         initWithArray: @[
-            @{ @"file" : @"dp_workit.wav" },
-            @{ @"file" : @"dp_makeit.wav" },
-            @{ @"file" : @"dp_doit.wav" },
-            @{ @"file" : @"dp_makesus.wav" },
-        ]];
+            @{ @"file": @"dp_workit.wav", @"player": @(1) },
+            @{ @"file": @"dp_makeit.wav", @"player": @(1) },
+            @{ @"file": @"dp_doit.wav", @"player": @(1) },
+            @{ @"file": @"dp_makesus.wav", @"player": @(1) }
+        ]
+    ];
+    
+    
+    
+    // [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&amp;error];*/
+    
     
 }
 
