@@ -10,27 +10,24 @@
 #import "CustomCell.h"
 
 @interface ViewController ()
+
 @property (strong, nonatomic) NSMutableArray* objects;
+
 @end
 
 @implementation ViewController
+
+- (void)didReceiveMemoryWarning { [super didReceiveMemoryWarning]; }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-
-    /* questo è un commento di ivo */
-    /* questo è mio */
-    /* vediamo se git regge */
-
-	//ci sono anch'io! test
-
-	//ci sono anch'io! test-git
-
-    _objects =[[NSMutableArray alloc]initWithArray:@[@"Track 1", @"Track 2"]];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self setObjects: [[NSMutableArray alloc] initWithArray:@[
+                       
+       @{ @"track": @"draftpunk", @"dirname" : @"draftpunk" }
     
+    ]]];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -51,8 +48,7 @@
     
     cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.trackLabel.text = self.objects[indexPath.row];
-    // Configure the cell...
+    cell.trackLabel.text = self.objects[indexPath.row][@"track"];
     
     return cell;
 }
@@ -132,10 +128,5 @@
      */
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
