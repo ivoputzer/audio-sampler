@@ -9,12 +9,8 @@
 /* Begin PBXBuildFile section */
 		2E745530171D5231006FDCA9 /* button_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E74552F171D5231006FDCA9 /* button_edit.png */; };
 		2E745532171D542E006FDCA9 /* barra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E745531171D542E006FDCA9 /* barra.jpg */; };
-<<<<<<< HEAD
-		2E74553F171D63EA006FDCA9 /* button_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E74553D171D63EA006FDCA9 /* button_active.png */; };
-=======
 		2E745535171D5E54006FDCA9 /* buttonPad_idle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E745533171D5E54006FDCA9 /* buttonPad_idle.png */; };
 		2E745536171D5E54006FDCA9 /* buttonPad_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E745534171D5E54006FDCA9 /* buttonPad_active.png */; };
->>>>>>> InsertImage
 		2E745540171D63EA006FDCA9 /* button_idle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E74553E171D63EA006FDCA9 /* button_idle.png */; };
 		2E745542171D7104006FDCA9 /* button_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E745541171D7104006FDCA9 /* button_active.png */; };
 		2E745544171D7D37006FDCA9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E745543171D7D37006FDCA9 /* Icon-72.png */; };
@@ -59,12 +55,8 @@
 /* Begin PBXFileReference section */
 		2E74552F171D5231006FDCA9 /* button_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_edit.png; sourceTree = "<group>"; };
 		2E745531171D542E006FDCA9 /* barra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = barra.jpg; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		2E74553D171D63EA006FDCA9 /* button_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_active.png; sourceTree = "<group>"; };
-=======
 		2E745533171D5E54006FDCA9 /* buttonPad_idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonPad_idle.png; sourceTree = "<group>"; };
 		2E745534171D5E54006FDCA9 /* buttonPad_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonPad_active.png; sourceTree = "<group>"; };
->>>>>>> InsertImage
 		2E74553E171D63EA006FDCA9 /* button_idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_idle.png; sourceTree = "<group>"; };
 		2E745541171D7104006FDCA9 /* button_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_active.png; sourceTree = "<group>"; };
 		2E745543171D7D37006FDCA9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -237,12 +229,8 @@
 			children = (
 				2EAF8F59171C55B10011B0F9 /* music.png */,
 				2EAF8F5D171C5AA60011B0F9 /* pattern.jpg */,
-<<<<<<< HEAD
-				2E74553D171D63EA006FDCA9 /* button_active.png */,
-=======
 				2E745533171D5E54006FDCA9 /* buttonPad_idle.png */,
 				2E745534171D5E54006FDCA9 /* buttonPad_active.png */,
->>>>>>> InsertImage
 				2E74553E171D63EA006FDCA9 /* button_idle.png */,
 				2EAF8F61171C60100011B0F9 /* music.jpg */,
 				2E745541171D7104006FDCA9 /* button_active.png */,
@@ -330,12 +318,8 @@
 				2EED6D1D171D3462003B2709 /* dp_makesus.wav in Resources */,
 				2E745530171D5231006FDCA9 /* button_edit.png in Resources */,
 				2E745532171D542E006FDCA9 /* barra.jpg in Resources */,
-<<<<<<< HEAD
-				2E74553F171D63EA006FDCA9 /* button_active.png in Resources */,
-=======
 				2E745535171D5E54006FDCA9 /* buttonPad_idle.png in Resources */,
 				2E745536171D5E54006FDCA9 /* buttonPad_active.png in Resources */,
->>>>>>> InsertImage
 				2E745540171D63EA006FDCA9 /* button_idle.png in Resources */,
 				2E745542171D7104006FDCA9 /* button_active.png in Resources */,
 				2E745544171D7D37006FDCA9 /* Icon-72.png in Resources */,
