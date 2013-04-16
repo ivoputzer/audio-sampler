@@ -10,8 +10,18 @@
 
 @interface SamplerMatrixCell : UICollectionViewCell
 
-@property BOOL state;
+@property BOOL status;
+
+@property int identifier;
+
+@property id delegate;
 
 -(void) color: (UIColor*)color;
+
+@end
+
+@protocol SamplerMatrixDelegate <NSObject>
+
+-(void) statusUpdate : (BOOL) status forIdentifier: (int) i;
 
 @end
