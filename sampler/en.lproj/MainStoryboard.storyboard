@@ -180,24 +180,36 @@
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zlo-LU-Y39">
-                                <color key="backgroundColor" red="0.40074300930000001" green="0.47068051500000002" blue="0.54526068240000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xj4-xh-LTA">
-                                    <size key="itemSize" width="50" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pattern.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Qr6-yj-tSE"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zlo-LU-Y39">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="0.0" id="xj4-xh-LTA">
+                                    <size key="itemSize" width="60" height="60"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="10" maxX="5" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SamplerMatrixCell" id="uLf-zC-UAf">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SamplerMatrixCell" id="uLf-zC-UAf">
+                                        <rect key="frame" x="5" y="10" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-nI-U9R">
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.11247162769999999" blue="0.15589651900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="SNe-nI-U9R" firstAttribute="leading" secondItem="uLf-zC-UAf" secondAttribute="leading" type="default" id="AJD-uh-4l4"/>
+                                            <constraint firstItem="SNe-nI-U9R" firstAttribute="bottom" secondItem="uLf-zC-UAf" secondAttribute="bottom" type="default" id="J4K-92-ebi"/>
+                                            <constraint firstItem="SNe-nI-U9R" firstAttribute="trailing" secondItem="uLf-zC-UAf" secondAttribute="trailing" type="default" id="Tie-Zo-d9s"/>
+                                            <constraint firstItem="SNe-nI-U9R" firstAttribute="top" secondItem="uLf-zC-UAf" secondAttribute="top" type="default" id="nlg-3W-Ek8"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -208,10 +220,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zlo-LU-Y39" firstAttribute="top" secondItem="1j6-ca-iwb" secondAttribute="top" type="default" id="Qi3-5k-pjK"/>
-                            <constraint firstItem="zlo-LU-Y39" firstAttribute="trailing" secondItem="1j6-ca-iwb" secondAttribute="trailing" type="default" id="TYh-5g-XoQ"/>
-                            <constraint firstItem="zlo-LU-Y39" firstAttribute="bottom" secondItem="1j6-ca-iwb" secondAttribute="bottom" type="default" id="aHC-dn-vt7"/>
-                            <constraint firstItem="zlo-LU-Y39" firstAttribute="leading" secondItem="1j6-ca-iwb" secondAttribute="leading" type="default" id="b3o-qo-PG9"/>
+                            <constraint firstItem="Qr6-yj-tSE" firstAttribute="trailing" secondItem="1j6-ca-iwb" secondAttribute="trailing" type="default" id="IbG-Pt-wfm"/>
+                            <constraint firstItem="Qr6-yj-tSE" firstAttribute="leading" secondItem="1j6-ca-iwb" secondAttribute="leading" type="default" id="W09-tq-09f"/>
+                            <constraint firstItem="Qr6-yj-tSE" firstAttribute="bottom" secondItem="1j6-ca-iwb" secondAttribute="bottom" type="default" id="aPA-iy-Fqm"/>
+                            <constraint firstItem="Qr6-yj-tSE" firstAttribute="top" secondItem="1j6-ca-iwb" secondAttribute="top" type="default" id="aRd-aG-kJg"/>
+                            <constraint firstItem="zlo-LU-Y39" firstAttribute="trailing" secondItem="1j6-ca-iwb" secondAttribute="trailing" type="default" id="dfE-h5-1Xd"/>
+                            <constraint firstItem="zlo-LU-Y39" firstAttribute="bottom" secondItem="1j6-ca-iwb" secondAttribute="bottom" type="default" id="jVS-hW-LNT"/>
+                            <constraint firstItem="zlo-LU-Y39" firstAttribute="top" secondItem="1j6-ca-iwb" secondAttribute="top" type="default" id="pXJ-EB-KGX"/>
+                            <constraint firstItem="zlo-LU-Y39" firstAttribute="leading" secondItem="1j6-ca-iwb" secondAttribute="leading" type="default" id="yCt-wi-Rvg"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -220,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XX-IF-ubK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="-267"/>
+            <point key="canvasLocation" x="1389" y="-307"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jG3-de-18K">

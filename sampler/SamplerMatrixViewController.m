@@ -10,18 +10,26 @@
 
 @interface SamplerMatrixViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property NSMutableArray *matrix;
+
 @end
 
 @implementation SamplerMatrixViewController
+
+- (void)didReceiveMemoryWarning { [super didReceiveMemoryWarning]; }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]; return self;
 }
 
-- (void)viewDidLoad { [super viewDidLoad]; }
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 
-- (void)didReceiveMemoryWarning { [super didReceiveMemoryWarning]; }
+    self.matrix = [[NSMutableArray alloc] initWithArray: @[]];
+    
+}
 
 
 /* --------------------------------- Collection View Delegate  --------------------------------- */
@@ -29,7 +37,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 1;
+    return 256;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)view cellForItemAtIndexPath:(NSIndexPath *)index
