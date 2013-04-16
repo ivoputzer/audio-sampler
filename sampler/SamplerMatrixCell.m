@@ -18,18 +18,16 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame]; if (self) { self.status = false; } return self;
+    self = [super initWithFrame:frame]; return self;
 }
 
-
 -(void) color: (UIColor*) color { [self.button setBackgroundColor: color]; }
-
 
 /* -------------------------------------- Action Events  --------------------------------------- */
 
 - (IBAction)click:(UIButton*)button
 {
-    [self.delegate statusUpdate:!self.status forIdentifier: self.identifier];
+    [self.delegate cell:self status:self.status index:self.index];
 }
 
 @end

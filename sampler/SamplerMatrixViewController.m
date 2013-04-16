@@ -71,28 +71,32 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)view cellForItemAtIndexPath:(NSIndexPath *)index
 {
-    SamplerMatrixCell *cell = [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
+    SamplerMatrixCell *cell =
+        [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
     
-    UIColor *color = cell.status
-    ? [UIColor colorWithRed:0.0f/255.0f green:187.0f/255.0f blue:226.0f/255.0f alpha:1.0]
-    : [UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:0.5];
-    
-    cell.identifier = index.row;
+    cell.index = index.row;
     
     cell.delegate = self;
     
-    //cell.status = self.matrix[index.row];
+    cell.status = [self.matrix[index.row] boolValue];
     
-    [cell color:color];
+    [cell color:[UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:0.5]];
     
     return cell;
 }
 
--(void) statusUpdate : (BOOL) status forIdentifier: (int) i
+-(void) cell:(SamplerMatrixCell*)cell status:(BOOL)status index:(int)index;
 {
-    // NSLog(@"Hai cliccato la cella : %d, lo status attuale è %d", i, self.matrix[i]);
+    self.matrix[index] = @(![self.matrix[index] boolValue]);
+
+    NSLog(@"indice : %d status : %@", index, self.matrix[index]);
     
-    // self.matrix[i] = status;
+    
+    UIColor *color = [self.matrix[index] boolValue]
+        ? [UIColor colorWithRed:0.0f/255.0f green:187.0f/255.0f blue:226.0f/255.0f alpha:1.0]
+        : [UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:0.5];
+    
+    [cell color:color];
 }
 
 @end

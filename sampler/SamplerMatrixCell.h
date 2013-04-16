@@ -12,7 +12,7 @@
 
 @property BOOL status;
 
-@property int identifier;
+@property int index;
 
 @property id delegate;
 
@@ -22,6 +22,6 @@
 
 @protocol SamplerMatrixDelegate <NSObject>
 
--(void) statusUpdate : (BOOL) status forIdentifier: (int) i;
+-(void)cell:(SamplerMatrixCell*)cell status:(BOOL)status index:(int)index;
 
 @end
