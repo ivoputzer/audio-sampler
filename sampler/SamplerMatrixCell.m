@@ -32,12 +32,22 @@
 /* --- Action Events --- */
 
 - (IBAction)click:(UIButton*)button
-{    
-    UIColor *color = self.state
-    ? [UIColor colorWithRed:35.0f/255.0f green:31.0f/255.0f blue:32.0f/255.0f alpha:1.0]
-    : [UIColor colorWithRed:0.0f/255.0f green:187.0f/255.0f blue:226.0f/255.0f alpha:1.0];
+{
+    UIImage *image = self.state
+    ? [UIImage imageNamed:@"buttonPad_idle.png"]
+    : [UIImage imageNamed:@"buttonPad_active.png"];
     
-    [self color: color]; self.state = !self.state; // toggler
+    
+    [button setBackgroundImage: image forState:UIControlStateNormal];
+    
+    
+    /*UIColor *color = self.state
+    ? [UIColor colorWithRed:35.0f/255.0f green:31.0f/255.0f blue:32.0f/255.0f alpha:1.0]
+    : [UIColor colorWithRed:0.0f/255.0f green:187.0f/255.0f blue:226.0f/255.0f alpha:1.0];*/
+    
+    // [self color: color];
+    
+    self.state = !self.state; // toggler
 }
 
 @end
