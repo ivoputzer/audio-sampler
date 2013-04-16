@@ -39,13 +39,11 @@
         
         [audio prepareToPlay];
         
-        [audio setNumberOfLoops: 10];
     }];
     
-    /*for ( int i = 0; i < [self.audio count] * 16; i++)
-    {
-        [self.matrix insertObject: @(false) atIndex:i++];
-    }*/
+    int limit = [self.audio count] * 16;
+    
+    for ( int i = 0; i < limit; i++) self.matrix[i] = @(NO); // default values
 }
 
 - (void)viewDidLoad
@@ -92,10 +90,9 @@
 
 -(void) statusUpdate : (BOOL) status forIdentifier: (int) i
 {
-    NSLog(@"Hai cliccato la cella : %d, lo status attuale è %d", i, status);
+    // NSLog(@"Hai cliccato la cella : %d, lo status attuale è %d", i, self.matrix[i]);
     
-    
-    
+    // self.matrix[i] = status;
 }
 
 @end
