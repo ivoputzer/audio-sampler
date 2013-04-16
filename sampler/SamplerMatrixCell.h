@@ -10,6 +10,8 @@
 
 @interface SamplerMatrixCell : UICollectionViewCell
 
+@property BOOL state;
+
 -(void) color: (UIColor*)color;
 
 @end

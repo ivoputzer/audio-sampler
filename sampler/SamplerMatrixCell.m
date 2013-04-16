@@ -12,42 +12,41 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
-@property BOOL state;
-
 @end
 
 @implementation SamplerMatrixCell
 
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame]; if (self) self.state = false; return self;    
+    self = [super initWithFrame:frame];
+    
+    if (self)
+    {
+        NSLog(@"state %d", self.state);
+        
+        self.state = false;
+    }
+    
+    return self;
 }
 
 
 -(void) color: (UIColor*) color
-{    
+{
     [self.button setBackgroundColor: color];
 }
 
-/* --- Action Events --- */
+
+/* -------------------------------------- Action Events  --------------------------------------- */
 
 - (IBAction)click:(UIButton*)button
-{
-    /*UIImage *image = self.state
-    ? [UIImage imageNamed:@"buttonPad_idle.png"]
-    : [UIImage imageNamed:@"buttonPad_active.png"];*/
+{    
+    UIColor *color = !self.state
+    ? [UIColor colorWithRed:0.0f/255.0f green:187.0f/255.0f blue:226.0f/255.0f alpha:1.0]
+    : [UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:0.5];
+    // : ;
     
-    
-   // [button setBackgroundImage: image forState:UIControlStateNormal];
-    
-    
-    UIColor *color = self.state
-    ? [UIColor colorWithRed:35.0f/255.0f green:31.0f/255.0f blue:32.0f/255.0f alpha:1.0]
-    : [UIColor colorWithRed:0.0f/255.0f green:187.0f/255.0f blue:226.0f/255.0f alpha:1.0];
-    
-    [self color: color];
-    
-    self.state = !self.state; // toggler
+    [self color: color]; self.state = !self.state; // toggler
 }
 
 @end

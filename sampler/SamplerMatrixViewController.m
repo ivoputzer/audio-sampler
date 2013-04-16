@@ -11,6 +11,8 @@
 
 @interface SamplerMatrixViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property NSMutableArray *samples;
+
 @property NSMutableArray *matrix;
 
 @end
@@ -28,7 +30,14 @@
 {
     [super viewDidLoad];
 
-    self.matrix = [[NSMutableArray alloc] initWithArray: @[]];
+    self.samples = [[NSMutableArray alloc]
+                    
+        initWithArray: @[
+            @{ @"file" : @"dp_workit.wav" },
+            @{ @"file" : @"dp_makeit.wav" },
+            @{ @"file" : @"dp_doit.wav" },
+            @{ @"file" : @"dp_makesus.wav" },
+        ]];
     
 }
 
@@ -37,14 +46,14 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 256;
+    return [self.samples count] * 16;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)view cellForItemAtIndexPath:(NSIndexPath *)index
 {
     SamplerMatrixCell *cell = [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
     
-    [cell color: [UIColor colorWithRed:35.0f/255.0f green:31.0f/255.0f blue:32.0f/255.0f alpha:1.0]];
+    [cell color:[UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:0.5]];
     
     return cell;
 }
