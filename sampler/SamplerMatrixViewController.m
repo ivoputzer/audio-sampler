@@ -56,7 +56,24 @@
     
     [self setAudio: [[NSMutableArray alloc] initWithArray:@[]]];
     
-    [self loadAudio: @[@"dp_workit", @"dp_makeit", @"dp_doit", @"dp_makesus"]];
+    [self loadAudio: @[
+     @"dp_workit",
+     @"dp_makeit",
+     @"dp_doit",
+     @"dp_makesus",
+
+     @"b_tam", // tamburine
+     @"b_clap", // hands clap
+     @"b_hh", // hihat - normal
+     @"b_hh2", // hihat - accent 
+     @"b_snare", // snare
+     @"b_bass", // bass open
+     
+     @"ruben_bass", // bass tight
+     @"ruben_synth" // bass tight
+
+     
+     ]];
 }
 
 -(void)viewDidAppear:(BOOL)animated { [self startAudio]; }
@@ -64,39 +81,25 @@
 -(void)viewDidDisappear:(BOOL)animated { [self stopAudio]; }
 
 -(void) playAudio
-{
-    NSLog(@"current position in the matrix : %d", self.current);
-    
-    // controllare se in matrix sono attive le tracce su posizione current
-        
-    /*if ( [self.matrix[self.current + 0] boolValue] ){
-         AVAudioPlayer *audio =  (AVAudioPlayer*)self.audio[0]; [audio stop]; [audio play]; } //  0 -> 15
-    if ( [self.matrix[self.current +16] boolValue] ){ [(AVAudioPlayer*)self.audio[1] play]; } // 16 -> 31
-    if ( [self.matrix[self.current +32] boolValue] ){ [(AVAudioPlayer*)self.audio[2] play]; } // 32 -> 47
-    if ( [self.matrix[self.current +48] boolValue] ){ [(AVAudioPlayer*)self.audio[3] play]; } // 48 -> 63
-    
+{     
     [self.audio enumerateObjectsUsingBlock:^(AVAudioPlayer *audio, NSUInteger index, BOOL *stop) {
-     
-        NSLog(@"audio : %d; current : %d", index, self.current);
-        
-        if ( [self.matrix[self.current * index] boolValue] )
+             
+        if ( [self.matrix[self.current + index * 16] boolValue] )
         {
-            [audio stop]; [audio play];
+            // if ([audio isPlaying]){[audio setCurrentTime:0]; }else{ [audio play]; }
+            
+            [audio setCurrentTime:0]; [audio play];
         }
      
-     }];
-    
-    
-    [self setCurrent: self.current < 15 ? self.current +1 : 0];*/
-    
-    
+    }];
     
     [self setCurrent: self.current < 15 ? self.current +1 : 0];
+
 }
 
 - (void) startAudio
 {
-    [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(playAudio) userInfo:nil repeats:true]];
+    [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(playAudio) userInfo:nil repeats:true]];
 }
 
 -(void) stopAudio
@@ -132,7 +135,7 @@
 {
     self.matrix[index] = @(![self.matrix[index] boolValue]);
 
-    NSLog(@"indice : %d status : %@", index, self.matrix[index]);
+    //NSLog(@"indice : %d status : %@", index, self.matrix[index]);
     
     
     UIColor *color = [self.matrix[index] boolValue]
