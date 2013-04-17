@@ -41,6 +41,15 @@
         
     }];
     
+    AVAudioPlayer * player = self.audio[1];
+    
+    [player play];
+    
+    [player setNumberOfLoops: 30];
+    
+    
+    
+    
     int limit = [self.audio count] * 16;
     
     for ( int i = 0; i < limit; i++) self.matrix[i] = @(NO); // default values
