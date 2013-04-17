@@ -40,7 +40,9 @@
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:obj ofType:@"wav"]];
         
         AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-               
+        
+        //NSLog(@"AUDIO: %@", audio);
+        
         [self.audio insertObject:audio atIndex:i];
         
         [audio prepareToPlay];
@@ -54,9 +56,21 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"viewDidLoad");
+    
     [self setMatrix:[[NSMutableArray alloc] initWithArray:@[]]];
     
     [self setAudio: [[NSMutableArray alloc] initWithArray:@[]]];
+    
+    /* INSERITO LA SERA */
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    _bundleSelected = [defaults integerForKey:@"bundle"];
+    NSLog(@"bundleSelected: %d", _bundleSelected);
+    
+    [self loadAudio: [[[defaults objectForKey:@"bundles"] objectAtIndex:_bundleSelected]  objectForKey:@"files"]];
+    
+    /* INSERITO LA SERA */
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -65,15 +79,15 @@
         when saving to phone user defaults we better save the state and samples that have been added last
     */
     
+    // A QUESTO PUNTO NON SERVE A NULLA PERCHE' IL METODO "DID APPEAR" VIENE CHIAMATO DOPO IL VIEWDIDLOAD
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    
     [self loadAudio: [[[defaults objectForKey:@"bundles"] objectAtIndex:0]  objectForKey:@"files"]];
         
     // NSArray *provaArray = [defaults objectForKey:@"matrix"]; NSLog(@"Array: %@", provaArray);
     
-    // [self startAudio]; NSLog(@"did appear");
+    [self startAudio];
+    NSLog(@"did appear");
     
 }
 
@@ -81,7 +95,7 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
-    NSLog(@"Array in disappear %@", self.matrix);
+    //NSLog(@"Array in disappear %@", self.matrix);
     
     // saving an MutableArray
     [prefs setObject:self.matrix forKey:@"matrix"];
@@ -167,6 +181,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    //NSLog(@"self.audio: %d", self.audio.count);
     return [self.audio count] * 16;
 }
 

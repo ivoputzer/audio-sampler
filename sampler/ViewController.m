@@ -44,12 +44,12 @@
                                                                  @"bundle_drum_kit_ac_snare"]},
                        
       @{@"bundle" : @"drum electric", @"icon": @"", @"files" : @[@"bundle_drum_kit_el_cick",
-                                                                 @"bundle_drum_kit_el_hihat_open"
+                                                                 @"bundle_drum_kit_el_hihat_open",
                                                                  @"bundle_drum_kit_el_hihat",
                                                                  @"bundle_drum_kit_el_snare",
                                                                  @"bundle_drum_kit_el_tom1",
-                                                                 @"bundle_drum_kit_el_tom2"
-                                                                 @"bundle_drum_kit_el_tom3"
+                                                                 @"bundle_drum_kit_el_tom2",
+                                                                 @"bundle_drum_kit_el_tom3",
                                                                  @"bundle_drum_kit_el_tom4"]}
     ]]];
     
@@ -279,7 +279,7 @@
     [self showAlert:self.bundles[indexPath.row]];
     
     NSUserDefaults *prefBundleSelected = [NSUserDefaults standardUserDefaults];
-    [prefBundleSelected setObject:self.bundles[indexPath.row][@"bundle"] forKey:@"bundle"];
+    [prefBundleSelected setInteger:indexPath.row forKey:@"bundle"];
     
     // Navigation logic may go here. Create and push another view controller.
     /*

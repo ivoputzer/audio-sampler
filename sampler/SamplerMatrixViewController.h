@@ -10,5 +10,5 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface SamplerMatrixViewController : UIViewController
-
+@property (nonatomic) int bundleSelected;
 @end
