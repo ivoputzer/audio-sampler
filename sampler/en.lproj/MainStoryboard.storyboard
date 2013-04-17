@@ -173,6 +173,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="vn7-nn-C5I">
+                                <rect key="frame" x="964" y="0.0" width="60" height="704"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.89836054649999997" green="0.95499904530000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="zlo-LU-Y39">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,6 +232,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Au-M3-L4S"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="timeline" destination="vn7-nn-C5I" id="bPJ-mr-iuR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XX-IF-ubK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,12 +279,14 @@
         <class className="SamplerMatrixCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SamplerMatrixCell.h"/>
             <relationships>
-                <relationship kind="action" name="click:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="SamplerMatrixViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SamplerMatrixViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="timeline" candidateClass="UIView"/>
+            </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
@@ -290,6 +300,8 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="playRecording:"/>
+                <relationship kind="action" name="startRecording:"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recButton" candidateClass="UIButton"/>
             </relationships>

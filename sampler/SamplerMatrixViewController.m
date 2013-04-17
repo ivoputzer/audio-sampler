@@ -20,6 +20,8 @@
 
 @property int current; // [0-15] -> if 15 reset to 0
 
+@property (weak, nonatomic) IBOutlet UIView *timeline;
+
 @end
 
 @implementation SamplerMatrixViewController
@@ -81,7 +83,7 @@
 -(void)viewDidDisappear:(BOOL)animated { [self stopAudio]; }
 
 -(void) playAudio
-{     
+{    
     [self.audio enumerateObjectsUsingBlock:^(AVAudioPlayer *audio, NSUInteger index, BOOL *stop) {
              
         if ( [self.matrix[self.current + index * 16] boolValue] )
@@ -93,13 +95,56 @@
      
     }];
     
+
     [self setCurrent: self.current < 15 ? self.current +1 : 0];
 
 }
 
+-(void) startTimeline
+{     
+    [UIView transitionWithView:self.timeline duration:0.125 options: UIViewAnimationOptionCurveLinear
+     
+    animations:^{
+        
+        [self.timeline setAlpha:0];
+    }
+    
+    completion:^(BOOL finished) {
+        
+        [self.timeline setFrame:CGRectOffset(self.timeline.frame, -964, 0)];
+        
+        [UIView transitionWithView:self.timeline duration:0.125 options: UIViewAnimationOptionCurveLinear
+         
+        animations:^{
+                    
+            [self.timeline setAlpha:1];
+        }
+         
+        completion:^(BOOL finished) {
+        
+            [UIView transitionWithView:self.timeline duration:15*0.25 options: UIViewAnimationOptionCurveLinear
+
+            animations:^{
+                
+                [self.timeline setFrame:CGRectOffset(self.timeline.frame, 964, 0)];
+            }
+             
+            completion:^(BOOL finished) {
+            
+                [self startTimeline];
+            
+            }];
+        
+        }];
+        
+    }];
+}
+
 - (void) startAudio
-{
+{  
     [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(playAudio) userInfo:nil repeats:true]];
+    
+    [self startTimeline];
 }
 
 -(void) stopAudio
