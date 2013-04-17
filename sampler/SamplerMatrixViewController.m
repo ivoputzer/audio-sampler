@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) NSMutableArray *audio; // holds the audio instances to play
 
-@property NSTimer *timer;
+@property (strong, nonatomic) NSTimer *timer;
 
 @property int current; // [0-15] -> if 15 reset to 0
 
@@ -73,14 +73,13 @@
      
      @"ruben_bass", // bass tight
      @"ruben_synth" // bass tight
-
      
      ]];
 }
 
--(void)viewDidAppear:(BOOL)animated { [self startAudio]; }
+-(void)viewDidAppear:(BOOL)animated { [self startAudio]; NSLog(@"did appear"); }
 
--(void)viewDidDisappear:(BOOL)animated { [self stopAudio]; }
+-(void)viewDidDisappear:(BOOL)animated { [self stopAudio]; NSLog(@"did disappear"); }
 
 -(void) playAudio
 {    
@@ -88,16 +87,17 @@
              
         if ( [self.matrix[self.current + index * 16] boolValue] )
         {
-            if ([audio isPlaying]){[audio setCurrentTime:0]; }else{ [audio play]; }
-            
-            // [audio setCurrentTime:0]; [audio play];
+            if ( [audio isPlaying] ) { [audio setCurrentTime:0]; }else{ [audio play]; } // [audio setCurrentTime:0]; [audio play];
         }
      
     }];
     
-
     [self setCurrent: self.current < 15 ? self.current +1 : 0];
+}
 
+-(void) syncTimeline
+{
+    
 }
 
 -(void) startTimeline
@@ -143,6 +143,8 @@
 - (void) startAudio
 {  
     [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(playAudio) userInfo:nil repeats:true]];
+    
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     
     [self startTimeline];
 }

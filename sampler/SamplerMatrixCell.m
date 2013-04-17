@@ -16,10 +16,7 @@
 
 @implementation SamplerMatrixCell
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame]; return self;
-}
+- (id)initWithFrame:(CGRect)frame { self = [super initWithFrame:frame]; return self; }
 
 -(void) color: (UIColor*) color { [self.button setBackgroundColor: color]; }
 
