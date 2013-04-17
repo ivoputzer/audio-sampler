@@ -57,23 +57,25 @@
     [self setMatrix:[[NSMutableArray alloc] initWithArray:@[]]];
     
     [self setAudio: [[NSMutableArray alloc] initWithArray:@[]]];
-    
-    [self loadAudio: @[
-     @"dp_workit",
-     @"dp_makeit",
-     @"dp_doit",
-     @"dp_makesus",
-
-     @"b_tam", @"b_clap", @"b_hh", @"b_hh2", @"b_snare", @"b_bass", @"ruben_bass", @"ruben_synth"
-     
-     ]];
 }
 
--(void)viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated
+{
+    /*
+        when saving to phone user defaults we better save the state and samples that have been added last
+    */
     
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+       
     
-    NSArray *provaArray = [prefs objectForKey:@"matrix"]; NSLog(@"Array: %@", provaArray);
+    
+    
+    [self loadAudio: @[@"dp_workit", @"dp_makeit", @"dp_doit", @"dp_makesus", @"b_tam", @"b_clap", @"b_hh", @"b_hh2", @"b_snare", @"b_bass", @"ruben_bass", @"ruben_synth"]];
+    
+    
+        
+    NSArray *provaArray = [defaults objectForKey:@"matrix"]; NSLog(@"Array: %@", provaArray);
     
     [self startAudio]; NSLog(@"did appear");
     
