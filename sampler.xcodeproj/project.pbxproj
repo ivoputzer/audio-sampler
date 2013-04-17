@@ -17,6 +17,19 @@
 		2E745546171D7D3B006FDCA9 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E745545171D7D3B006FDCA9 /* Icon-72@2x.png */; };
 		2E745548171D9103006FDCA9 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E745547171D9103006FDCA9 /* Default-Landscape@2x~ipad.png */; };
 		2E74554A171D9107006FDCA9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E745549171D9107006FDCA9 /* Default-Landscape~ipad.png */; };
+		2E8B4679171F027C009B56E5 /* bundle_drum_kit_ac_crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B466C171F027C009B56E5 /* bundle_drum_kit_ac_crash.wav */; };
+		2E8B467A171F027C009B56E5 /* bundle_drum_kit_ac_hihat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B466D171F027C009B56E5 /* bundle_drum_kit_ac_hihat.wav */; };
+		2E8B467B171F027C009B56E5 /* bundle_drum_kit_ac_kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B466E171F027C009B56E5 /* bundle_drum_kit_ac_kick.wav */; };
+		2E8B467C171F027C009B56E5 /* bundle_drum_kit_ac_rim.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B466F171F027C009B56E5 /* bundle_drum_kit_ac_rim.wav */; };
+		2E8B467D171F027C009B56E5 /* bundle_drum_kit_ac_snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4670171F027C009B56E5 /* bundle_drum_kit_ac_snare.wav */; };
+		2E8B467E171F027C009B56E5 /* bundle_drum_kit_el_cick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4671171F027C009B56E5 /* bundle_drum_kit_el_cick.wav */; };
+		2E8B467F171F027C009B56E5 /* bundle_drum_kit_el_hihat_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4672171F027C009B56E5 /* bundle_drum_kit_el_hihat_open.wav */; };
+		2E8B4680171F027C009B56E5 /* bundle_drum_kit_el_hihat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4673171F027C009B56E5 /* bundle_drum_kit_el_hihat.wav */; };
+		2E8B4681171F027C009B56E5 /* bundle_drum_kit_el_snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4674171F027C009B56E5 /* bundle_drum_kit_el_snare.wav */; };
+		2E8B4682171F027C009B56E5 /* bundle_drum_kit_el_tom1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4675171F027C009B56E5 /* bundle_drum_kit_el_tom1.wav */; };
+		2E8B4683171F027C009B56E5 /* bundle_drum_kit_el_tom2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4676171F027C009B56E5 /* bundle_drum_kit_el_tom2.wav */; };
+		2E8B4684171F027C009B56E5 /* bundle_drum_kit_el_tom3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4677171F027C009B56E5 /* bundle_drum_kit_el_tom3.wav */; };
+		2E8B4685171F027C009B56E5 /* bundle_drum_kit_el_tom4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4678171F027C009B56E5 /* bundle_drum_kit_el_tom4.wav */; };
 		2EAF8F34171C4FBF0011B0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F33171C4FBF0011B0F9 /* UIKit.framework */; };
 		2EAF8F36171C4FBF0011B0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F35171C4FBF0011B0F9 /* Foundation.framework */; };
 		2EAF8F38171C4FBF0011B0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F37171C4FBF0011B0F9 /* CoreGraphics.framework */; };
@@ -68,6 +81,19 @@
 		2E745545171D7D3B006FDCA9 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		2E745547171D9103006FDCA9 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		2E745549171D9107006FDCA9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		2E8B466C171F027C009B56E5 /* bundle_drum_kit_ac_crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_ac_crash.wav; sourceTree = "<group>"; };
+		2E8B466D171F027C009B56E5 /* bundle_drum_kit_ac_hihat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_ac_hihat.wav; sourceTree = "<group>"; };
+		2E8B466E171F027C009B56E5 /* bundle_drum_kit_ac_kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_ac_kick.wav; sourceTree = "<group>"; };
+		2E8B466F171F027C009B56E5 /* bundle_drum_kit_ac_rim.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_ac_rim.wav; sourceTree = "<group>"; };
+		2E8B4670171F027C009B56E5 /* bundle_drum_kit_ac_snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_ac_snare.wav; sourceTree = "<group>"; };
+		2E8B4671171F027C009B56E5 /* bundle_drum_kit_el_cick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_el_cick.wav; sourceTree = "<group>"; };
+		2E8B4672171F027C009B56E5 /* bundle_drum_kit_el_hihat_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_el_hihat_open.wav; sourceTree = "<group>"; };
+		2E8B4673171F027C009B56E5 /* bundle_drum_kit_el_hihat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_el_hihat.wav; sourceTree = "<group>"; };
+		2E8B4674171F027C009B56E5 /* bundle_drum_kit_el_snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_el_snare.wav; sourceTree = "<group>"; };
+		2E8B4675171F027C009B56E5 /* bundle_drum_kit_el_tom1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_el_tom1.wav; sourceTree = "<group>"; };
+		2E8B4676171F027C009B56E5 /* bundle_drum_kit_el_tom2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_el_tom2.wav; sourceTree = "<group>"; };
+		2E8B4677171F027C009B56E5 /* bundle_drum_kit_el_tom3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_el_tom3.wav; sourceTree = "<group>"; };
+		2E8B4678171F027C009B56E5 /* bundle_drum_kit_el_tom4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bundle_drum_kit_el_tom4.wav; sourceTree = "<group>"; };
 		2EAF8F30171C4FBF0011B0F9 /* Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EAF8F33171C4FBF0011B0F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2EAF8F35171C4FBF0011B0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -132,10 +158,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E8B466A171F0257009B56E5 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B466B171F0264009B56E5 /* Bundles */,
+			);
+			name = Samples;
+			sourceTree = "<group>";
+		};
+		2E8B466B171F0264009B56E5 /* Bundles */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B4686171F02A1009B56E5 /* drum kit acoustic */,
+				2E8B4687171F02B0009B56E5 /* drum kit electric */,
+			);
+			name = Bundles;
+			sourceTree = "<group>";
+		};
+		2E8B4686171F02A1009B56E5 /* drum kit acoustic */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B466C171F027C009B56E5 /* bundle_drum_kit_ac_crash.wav */,
+				2E8B466D171F027C009B56E5 /* bundle_drum_kit_ac_hihat.wav */,
+				2E8B466E171F027C009B56E5 /* bundle_drum_kit_ac_kick.wav */,
+				2E8B466F171F027C009B56E5 /* bundle_drum_kit_ac_rim.wav */,
+				2E8B4670171F027C009B56E5 /* bundle_drum_kit_ac_snare.wav */,
+			);
+			name = "drum kit acoustic";
+			sourceTree = "<group>";
+		};
+		2E8B4687171F02B0009B56E5 /* drum kit electric */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B4671171F027C009B56E5 /* bundle_drum_kit_el_cick.wav */,
+				2E8B4672171F027C009B56E5 /* bundle_drum_kit_el_hihat_open.wav */,
+				2E8B4673171F027C009B56E5 /* bundle_drum_kit_el_hihat.wav */,
+				2E8B4674171F027C009B56E5 /* bundle_drum_kit_el_snare.wav */,
+				2E8B4675171F027C009B56E5 /* bundle_drum_kit_el_tom1.wav */,
+				2E8B4676171F027C009B56E5 /* bundle_drum_kit_el_tom2.wav */,
+				2E8B4677171F027C009B56E5 /* bundle_drum_kit_el_tom3.wav */,
+				2E8B4678171F027C009B56E5 /* bundle_drum_kit_el_tom4.wav */,
+			);
+			name = "drum kit electric";
+			sourceTree = "<group>";
+		};
 		2EAF8F27171C4FBF0011B0F9 = {
 			isa = PBXGroup;
 			children = (
 				2E745549171D9107006FDCA9 /* Default-Landscape~ipad.png */,
+				2E8B466A171F0257009B56E5 /* Samples */,
 				2E745547171D9103006FDCA9 /* Default-Landscape@2x~ipad.png */,
 				2E745545171D7D3B006FDCA9 /* Icon-72@2x.png */,
 				2E745543171D7D37006FDCA9 /* Icon-72.png */,
@@ -346,6 +417,19 @@
 				2EDE2B3B171EA4240057096C /* stop.png in Resources */,
 				2EED6D41171EB3F3003B2709 /* ruben_bass.wav in Resources */,
 				2EED6D42171EB3F3003B2709 /* ruben_synth.wav in Resources */,
+				2E8B4679171F027C009B56E5 /* bundle_drum_kit_ac_crash.wav in Resources */,
+				2E8B467A171F027C009B56E5 /* bundle_drum_kit_ac_hihat.wav in Resources */,
+				2E8B467B171F027C009B56E5 /* bundle_drum_kit_ac_kick.wav in Resources */,
+				2E8B467C171F027C009B56E5 /* bundle_drum_kit_ac_rim.wav in Resources */,
+				2E8B467D171F027C009B56E5 /* bundle_drum_kit_ac_snare.wav in Resources */,
+				2E8B467E171F027C009B56E5 /* bundle_drum_kit_el_cick.wav in Resources */,
+				2E8B467F171F027C009B56E5 /* bundle_drum_kit_el_hihat_open.wav in Resources */,
+				2E8B4680171F027C009B56E5 /* bundle_drum_kit_el_hihat.wav in Resources */,
+				2E8B4681171F027C009B56E5 /* bundle_drum_kit_el_snare.wav in Resources */,
+				2E8B4682171F027C009B56E5 /* bundle_drum_kit_el_tom1.wav in Resources */,
+				2E8B4683171F027C009B56E5 /* bundle_drum_kit_el_tom2.wav in Resources */,
+				2E8B4684171F027C009B56E5 /* bundle_drum_kit_el_tom3.wav in Resources */,
+				2E8B4685171F027C009B56E5 /* bundle_drum_kit_el_tom4.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
