@@ -150,7 +150,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="U6d-XV-vDB"/>
+                    <navigationItem key="navigationItem" id="U6d-XV-vDB">
+                        <barButtonItem key="rightBarButtonItem" title="Download Kit" id="DIm-Kh-j5T"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="playButton" destination="IWu-zf-U1l" id="Wbx-Wg-gFR"/>
@@ -164,6 +166,7 @@
         <!--Sampler Matrix View Controller-->
         <scene sceneID="lYD-jr-zRd">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2XX-IF-ubK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="3Nw-0P-CIc" customClass="SamplerMatrixViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1j6-ca-iwb">
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
@@ -236,7 +239,6 @@
                         <outlet property="timeline" destination="vn7-nn-C5I" id="bPJ-mr-iuR"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2XX-IF-ubK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1185" y="-267"/>
         </scene>
