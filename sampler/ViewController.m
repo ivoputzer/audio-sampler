@@ -26,6 +26,8 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+    
     [self setObjects: [[NSMutableArray alloc] initWithArray:@[
                        
        @{ @"track": @"draftpunk", @"dirname" : @"draftpunk" }
