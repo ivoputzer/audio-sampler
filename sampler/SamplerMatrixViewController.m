@@ -64,15 +64,7 @@
      @"dp_doit",
      @"dp_makesus",
 
-     @"b_tam", // tamburine
-     @"b_clap", // hands clap
-     @"b_hh", // hihat - normal
-     @"b_hh2", // hihat - accent 
-     @"b_snare", // snare
-     @"b_bass", // bass open
-     
-     @"ruben_bass", // bass tight
-     @"ruben_synth" // bass tight
+     @"b_tam", @"b_clap", @"b_hh", @"b_hh2", @"b_snare", @"b_bass", @"ruben_bass", @"ruben_synth"
      
      ]];
 }
