@@ -88,9 +88,9 @@
              
         if ( [self.matrix[self.current + index * 16] boolValue] )
         {
-            // if ([audio isPlaying]){[audio setCurrentTime:0]; }else{ [audio play]; }
+            if ([audio isPlaying]){[audio setCurrentTime:0]; }else{ [audio play]; }
             
-            [audio setCurrentTime:0]; [audio play];
+            // [audio setCurrentTime:0]; [audio play];
         }
      
     }];
