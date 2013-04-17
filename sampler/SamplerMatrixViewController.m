@@ -77,9 +77,30 @@
      ]];
 }
 
--(void)viewDidAppear:(BOOL)animated { [self startAudio]; NSLog(@"did appear"); }
+-(void)viewDidAppear:(BOOL)animated {
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSArray *provaArray = [prefs objectForKey:@"matrix"];
+    NSLog(@"Array: %@", provaArray);
+    
+    [self startAudio];
+    NSLog(@"did appear");
+    
+}
 
--(void)viewDidDisappear:(BOOL)animated { [self stopAudio]; NSLog(@"did disappear"); }
+-(void)viewDidDisappear:(BOOL)animated {
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"Array in disappear %@", self.matrix);
+    
+    // saving an MutableArray
+    [prefs setObject:self.matrix forKey:@"matrix"];
+    
+    [self stopAudio];
+    NSLog(@"did disappear");
+}
 
 -(void) playAudio
 {    
