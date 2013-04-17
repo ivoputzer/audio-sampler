@@ -43,6 +43,8 @@
     
     AVAudioPlayer * player = self.audio[1];
     
+    
+    
     [player play];
     
     [player setNumberOfLoops: 30];
