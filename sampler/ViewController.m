@@ -32,7 +32,17 @@
                        
        @{ @"track": @"draftpunk", @"dirname" : @"draftpunk" }
     
-    ]]];    
+    ]]];
+    
+    /*[self setBundles: [[NSMutableArray alloc] initWithArray:@[
+    
+      @{@"bundle" : @"drum acoustic", @"files" : @[..qui dentro tutti i file..]},
+      @{@"bundle" : @"drum electric", @"files" : @[..qui dentro tutti i file..]}
+    
+    ]];*/
+    
+    
+    
 }
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
