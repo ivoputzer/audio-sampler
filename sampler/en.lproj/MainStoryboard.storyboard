@@ -281,6 +281,7 @@
         <class className="SamplerMatrixCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SamplerMatrixCell.h"/>
             <relationships>
+                <relationship kind="action" name="click:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button" candidateClass="UIButton"/>
             </relationships>
         </class>
@@ -298,6 +299,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
