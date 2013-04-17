@@ -34,12 +34,17 @@
     
     ]]];
     
-    /*[self setBundles: [[NSMutableArray alloc] initWithArray:@[
+    /*
+     
+     
+    [self setBundles: [[NSMutableArray alloc] initWithArray:@[
     
-      @{@"bundle" : @"drum acoustic", @"files" : @[..qui dentro tutti i file..]},
-      @{@"bundle" : @"drum electric", @"files" : @[..qui dentro tutti i file..]}
+      @{@"bundle" : @"drum acoustic", @"icon": @"", @"files" : @[..qui dentro tutti i file..]},
+      @{@"bundle" : @"drum electric", @"icon": @"", @"files" : @[..qui dentro tutti i file..]}
     
-    ]];*/
+    ]];
+     
+    */
     
     
     
