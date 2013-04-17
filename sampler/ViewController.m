@@ -53,6 +53,7 @@
     ]]];
     
     NSUserDefaults *prefBundles = [NSUserDefaults standardUserDefaults];
+    
     [prefBundles setObject:self.bundles forKey:@"bundles"];
     
 }

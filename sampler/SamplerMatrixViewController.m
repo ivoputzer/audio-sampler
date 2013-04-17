@@ -66,18 +66,14 @@
     */
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-       
     
     
     
-    [self loadAudio: @[@"dp_workit", @"dp_makeit", @"dp_doit", @"dp_makesus", @"b_tam", @"b_clap", @"b_hh", @"b_hh2", @"b_snare", @"b_bass", @"ruben_bass", @"ruben_synth"]];
-    
-    
+    [self loadAudio: [[[defaults objectForKey:@"bundles"] objectAtIndex:0]  objectForKey:@"files"]];
         
-    NSArray *provaArray = [defaults objectForKey:@"matrix"]; NSLog(@"Array: %@", provaArray);
+    // NSArray *provaArray = [defaults objectForKey:@"matrix"]; NSLog(@"Array: %@", provaArray);
     
-    [self startAudio]; NSLog(@"did appear");
+    // [self startAudio]; NSLog(@"did appear");
     
 }
 
