@@ -276,6 +276,9 @@
     
     [self showAlert:self.bundles[indexPath.row]];
     
+    NSUserDefaults *prefBundleSelected = [NSUserDefaults standardUserDefaults];
+    [prefBundleSelected setObject:self.bundles[indexPath.row][@"bundle"] forKey:@"bundle"];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
