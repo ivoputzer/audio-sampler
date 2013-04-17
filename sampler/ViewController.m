@@ -13,6 +13,7 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) NSMutableArray* objects;
+@property (strong, nonatomic) NSMutableArray* bundles;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *recButton;
 
@@ -32,21 +33,27 @@
                        
        @{ @"track": @"draftpunk", @"dirname" : @"draftpunk" }
     
-    ]]];
-    
-    /*
-     
+    ]]];     
      
     [self setBundles: [[NSMutableArray alloc] initWithArray:@[
     
-      @{@"bundle" : @"drum acoustic", @"icon": @"", @"files" : @[..qui dentro tutti i file..]},
-      @{@"bundle" : @"drum electric", @"icon": @"", @"files" : @[..qui dentro tutti i file..]}
+      @{@"bundle" : @"drum acoustic", @"icon": @"", @"files" : @[@"bundle_drum_kit_ac_crash",
+                                                                 @"bundle_drum_kit_ac_hithat",
+                                                                 @"bundle_drum_kit_ac_kick",
+                                                                 @"bundle_drum_kit_ac_rim",
+                                                                 @"bundle_drum_kit_ac_snare"]},
+                       
+      @{@"bundle" : @"drum electric", @"icon": @"", @"files" : @[@"bundle_drum_kit_el_cick",
+                                                                 @"bundle_drum_kit_el_hithat_open",
+                                                                 @"bundle_drum_kit_el_snare",
+                                                                 @"bundle_drum_kit_el_tom1",
+                                                                 @"bundle_drum_kit_el_tom2"
+                                                                 @"bundle_drum_kit_el_tom3"
+                                                                 @"bundle_drum_kit_el_tom4"]}
+    ]]];
     
-    ]];
-     
-    */
-    
-    
+    NSUserDefaults *prefBundles = [NSUserDefaults standardUserDefaults];
+    [prefBundles setObject:self.bundles forKey:@"bundles"];
     
 }
 
@@ -187,7 +194,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.objects.count;
+    return self.bundles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -198,7 +205,7 @@
     
     cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.trackLabel.text = self.objects[indexPath.row][@"track"];
+    cell.trackLabel.text = self.bundles[indexPath.row][@"bundle"];
     
     return cell;
 }
@@ -258,7 +265,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
+        [self.bundles removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
     }
 }
@@ -267,7 +274,7 @@
 {
     NSLog(@"La cella %d è stata cliccata", indexPath.row );
     
-    [self showAlert:self.objects[indexPath.row]];
+    [self showAlert:self.bundles[indexPath.row]];
     
     // Navigation logic may go here. Create and push another view controller.
     /*
