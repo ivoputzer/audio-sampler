@@ -3,14 +3,14 @@
 //  sampler
 //
 //  Created by Ivo von Putzer on 16/04/13.
-//  Copyright (c) 2013 Nico Santoro. All rights reserved.
+//  Copyright (c) 2013 Ivo von Putzer. All rights reserved.
 //
 
 #import "SamplerMatrixViewController.h"
+
 #import "SamplerMatrixCell.h"
 
 @interface SamplerMatrixViewController () <UICollectionViewDelegate, UICollectionViewDataSource, AVAudioPlayerDelegate, SamplerMatrixDelegate>
-
 
 @property NSMutableArray *matrix; // holds the pointers for all cells
 
@@ -81,11 +81,9 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
-    NSArray *provaArray = [prefs objectForKey:@"matrix"];
-    NSLog(@"Array: %@", provaArray);
+    NSArray *provaArray = [prefs objectForKey:@"matrix"]; NSLog(@"Array: %@", provaArray);
     
-    [self startAudio];
-    NSLog(@"did appear");
+    [self startAudio]; NSLog(@"did appear");
     
 }
 
@@ -114,11 +112,6 @@
     }];
     
     [self setCurrent: self.current < 15 ? self.current +1 : 0];
-}
-
--(void) syncTimeline
-{
-    
 }
 
 -(void) startTimeline
