@@ -22,6 +22,6 @@
 
 @protocol SamplerMatrixDelegate <NSObject>
 
--(void)cell:(SamplerMatrixCell*)cell status:(BOOL)status index:(int)index;
+-(void)cell:(SamplerMatrixCell*)cell index:(int)index;
 
 @end

@@ -27,7 +27,7 @@
 
 - (IBAction)click:(UIButton*)button
 {
-    [self.delegate cell:self status:self.status index:self.index];
+    [self.delegate cell:self index:self.index];
 }
 
 @end

@@ -16,6 +16,10 @@
 
 @property (strong, nonatomic) NSMutableArray *audio; // holds the audio instances to play
 
+@property NSTimer *timer;
+
+@property int current; // [0-15] -> if 15 reset to 0
+
 @end
 
 @implementation SamplerMatrixViewController
@@ -35,26 +39,13 @@
         
         AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
                
-        [self.audio insertObject: audio atIndex:i];
+        [self.audio insertObject:audio atIndex:i];
         
         [audio prepareToPlay];
         
     }];
-    
-    AVAudioPlayer * player = self.audio[1];
-    
-    
-    
-    [player play];
-    
-    [player setNumberOfLoops: 30];
-    
-    
-    
-    
-    int limit = [self.audio count] * 16;
-    
-    for ( int i = 0; i < limit; i++) self.matrix[i] = @(NO); // default values
+        
+    for ( int i = 0; i < [self.audio count] * 16; i++) self.matrix[i] = @(NO); // default values for the matrix
 }
 
 - (void)viewDidLoad
@@ -66,6 +57,51 @@
     [self setAudio: [[NSMutableArray alloc] initWithArray:@[]]];
     
     [self loadAudio: @[@"dp_workit", @"dp_makeit", @"dp_doit", @"dp_makesus"]];
+}
+
+-(void)viewDidAppear:(BOOL)animated { [self startAudio]; }
+
+-(void)viewDidDisappear:(BOOL)animated { [self stopAudio]; }
+
+-(void) playAudio
+{
+    NSLog(@"current position in the matrix : %d", self.current);
+    
+    // controllare se in matrix sono attive le tracce su posizione current
+        
+    /*if ( [self.matrix[self.current + 0] boolValue] ){
+         AVAudioPlayer *audio =  (AVAudioPlayer*)self.audio[0]; [audio stop]; [audio play]; } //  0 -> 15
+    if ( [self.matrix[self.current +16] boolValue] ){ [(AVAudioPlayer*)self.audio[1] play]; } // 16 -> 31
+    if ( [self.matrix[self.current +32] boolValue] ){ [(AVAudioPlayer*)self.audio[2] play]; } // 32 -> 47
+    if ( [self.matrix[self.current +48] boolValue] ){ [(AVAudioPlayer*)self.audio[3] play]; } // 48 -> 63
+    
+    [self.audio enumerateObjectsUsingBlock:^(AVAudioPlayer *audio, NSUInteger index, BOOL *stop) {
+     
+        NSLog(@"audio : %d; current : %d", index, self.current);
+        
+        if ( [self.matrix[self.current * index] boolValue] )
+        {
+            [audio stop]; [audio play];
+        }
+     
+     }];
+    
+    
+    [self setCurrent: self.current < 15 ? self.current +1 : 0];*/
+    
+    
+    
+    [self setCurrent: self.current < 15 ? self.current +1 : 0];
+}
+
+- (void) startAudio
+{
+    [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(playAudio) userInfo:nil repeats:true]];
+}
+
+-(void) stopAudio
+{
+    [self.timer invalidate]; [self setTimer:nil];
 }
 
 /* ---------------------------------- Sampler Matrix Delegate ---------------------------------- */
@@ -85,18 +121,14 @@
     SamplerMatrixCell *cell =
         [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
     
-    cell.index = index.row;
-    
-    cell.delegate = self;
-    
-    cell.status = [self.matrix[index.row] boolValue];
-    
+    cell.index = index.row; cell.delegate = self;
+        
     [cell color:[UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:0.5]];
     
     return cell;
 }
 
--(void) cell:(SamplerMatrixCell*)cell status:(BOOL)status index:(int)index;
+-(void) cell:(SamplerMatrixCell*)cell index:(int)index;
 {
     self.matrix[index] = @(![self.matrix[index] boolValue]);
 
