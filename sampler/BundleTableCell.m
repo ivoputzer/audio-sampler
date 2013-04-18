@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (nonatomic) BOOL swipe;
 
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+
 @end
 
 @implementation BundleTableCell
@@ -26,9 +28,13 @@
 - (BundleTableCell*) withInfo: (NSDictionary*) info
 {
     [self.deleteButton setAlpha:0];
-    [self.bundleName setText: info[@"name"]];
+    
+    [self.bundleName setText: info[@"bundle"]];
+        
+    [self.icon setImage:[UIImage imageNamed:info[@"icon"]]];
     
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(longPressDetected:)];
+    
     [self addGestureRecognizer:gesture];
     
     return self;

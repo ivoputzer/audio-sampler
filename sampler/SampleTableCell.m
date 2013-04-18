@@ -22,6 +22,8 @@
 
 @property NSDictionary *info;
 
+@property (weak, nonatomic) IBOutlet UILabel *activationFlag;
+
 @end
 
 @implementation SampleTableCell
@@ -53,7 +55,7 @@
     
     if ( 0 == self.addIcon.tag )
     {
-        [self.addIcon setImage:[UIImage imageNamed: @"ic_cross.png"] forState:UIControlStateNormal];
+        [self.addIcon setImage:[UIImage imageNamed: @"ic_tick.png"] forState:UIControlStateNormal];
         
         [self.addIcon setTag: 1];
         
@@ -62,10 +64,24 @@
         [samples addObject: self.info];
         
         [defaults setObject:samples forKey:@"activeSamples"];
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            
+            [self.activationFlag setAlpha:1];
+            
+        } completion:^(BOOL finished) {
+            
+            [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                
+                [self.activationFlag setAlpha:0];
+                
+            } completion:^(BOOL finished) { /* f*** u in your blurry ass */ }];
+
+        }];        
     }
     else
     {
-        [self.addIcon setImage:[UIImage imageNamed: @"ic_plus.png"] forState:UIControlStateNormal];
+        [self.addIcon setImage:[UIImage imageNamed: @"ic_cross.png"] forState:UIControlStateNormal];
         
         [self.addIcon setTag: 0];
     }

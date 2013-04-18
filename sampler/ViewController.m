@@ -41,7 +41,7 @@
     [self setBundles: [[NSMutableArray alloc] initWithArray:@[
         @{
             @"bundle" : @"Drum Acoustic",
-            @"icon": @"",
+            @"icon": @"bundle_ic_drum.png",
             @"files" : @[
                @{@"name":@"Acoustic Crash", @"icon":@"bundle_ic_ride.png", @"file" : @"bundle_drum_kit_ac_crash"},
                @{@"name":@"Acoustic Hi-Hat", @"icon":@"bundle_ic_hihat.png", @"file" : @"bundle_drum_kit_ac_hihat"},
@@ -53,7 +53,7 @@
                            
         @{
             @"bundle" : @"Drum Electric",
-            @"icon": @"",
+            @"icon": @"bundle_ic_drum.png",
             @"files" : @[
                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"},
@@ -63,6 +63,32 @@
                @{@"name": @"Electric Tom 3", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom3"},
                @{@"name": @"Electric Tom 4", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom4"},
                @{@"name": @"Electric Kick", @"icon": @"bundle_ic_kick.png", @"file": @"bundle_drum_kit_el_cick"},
+            ]
+        },
+        @{
+            @"bundle" : @"Synth Kit",
+            @"icon": @"bundle_ic_synth.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+            ]
+        },
+                       
+        @{
+            @"bundle" : @"Trumpet Kit",
+            @"icon": @"bundle_ic_trumpet.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+            ]
+        },
+                       
+        @{
+            @"bundle" : @"Windbell Kit",
+            @"icon": @"bundle_ic_windbell.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
             ]
         }
     ]]];
@@ -77,7 +103,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return 1; }
 
-
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
     return (self.bundlesTable == table) ? self.bundles.count : self.samples.count;
@@ -91,7 +116,7 @@
 
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
         
-        return [cell withInfo:@{@"name": self.bundles[index.row][@"bundle"]}];
+        return [cell withInfo:self.bundles[index.row]];
     }
     else
     {     
