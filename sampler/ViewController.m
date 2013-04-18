@@ -60,14 +60,14 @@
             @"bundle" : @"Drum Electric",
             @"icon": @"",
             @"files" : @[
-               @{@"name": @"", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
-               @{@"name": @"", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"},
-               @{@"name": @"", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat"},
-               @{@"name": @"", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom1"},
-               @{@"name": @"", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom2"},
-               @{@"name": @"", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom3"},
-               @{@"name": @"", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom4"},
-               @{@"name": @"", @"icon": @"bundle_ic_kick.png", @"file": @"bundle_drum_kit_el_cick"},
+               @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+               @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"},
+               @{@"name": @"Electric Hi-Hat", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat"},
+               @{@"name": @"Electric Tom 1", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom1"},
+               @{@"name": @"Electric Tom 2", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom2"},
+               @{@"name": @"Electric Tom 3", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom3"},
+               @{@"name": @"Electric Tom 4", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom4"},
+               @{@"name": @"Electric Kick", @"icon": @"bundle_ic_kick.png", @"file": @"bundle_drum_kit_el_cick"},
             ]
         }
     ]]];
@@ -251,7 +251,9 @@
         cell2.tag = indexPath.row;
         [cell2 setDelegate:self];
         
-        return [cell2 setInfo: self.instruments[indexPath.row] andTag:indexPath.row];
+        return cell2;
+        
+        // return [cell2 setInfo: self.instruments[indexPath.row] andTag:indexPath.row];
     }
 }
 

@@ -9,7 +9,9 @@
 #import "BundleTableCell.h"
 
 @interface BundleTableCell()
+
 @property (nonatomic) NSArray* info;
+
 @end
 
 @implementation BundleTableCell
@@ -35,7 +37,6 @@
 
 - (IBAction)playInstrumentSelected:(id)sender {
     
-    [self.delegate cellClickedWithTag:self.tag andUrl:self.typeOfInstrument.text];
     
 }
 
