@@ -11,6 +11,8 @@
 @interface BundleTableCell()
 
 @property (weak, nonatomic) IBOutlet UILabel *bundleName;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (nonatomic) BOOL swipe;
 
 @end
 
@@ -23,17 +25,20 @@
 
 - (BundleTableCell*) withInfo: (NSDictionary*) info
 {
+    [self.deleteButton setAlpha:0];
     [self.bundleName setText: info[@"name"]];
     
-    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressDetected:)];
+    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(longPressDetected:)];
     [self addGestureRecognizer:gesture];
     
     return self;
 }
 
-- (void)longPressDetected:(UILongPressGestureRecognizer*)sender
+- (void)longPressDetected:(UISwipeGestureRecognizer*)sender
 {
-    NSLog(@"LONG-PRESSED");
+    self.swipe = !self.swipe;
+    
+    [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionAllowAnimatedContent animations:^ { [self.deleteButton setAlpha:self.swipe];} completion:^ (BOOL finished){/**/}];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

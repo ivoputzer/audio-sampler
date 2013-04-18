@@ -86,12 +86,14 @@
     if ( self.bundlesTable == table ) // the one on the left
     {        
         BundleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"BundleTableCell" forIndexPath:index];
-                
+        //[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+        
         return [cell withInfo:@{@"name": self.bundles[index.row][@"bundle"]}];     }
     else
     {     
         SampleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"SampleTableCell" forIndexPath:index];
-                
+        
         return [cell withInfo:self.samples[index.row]];
     }
 }
