@@ -44,27 +44,32 @@
     ]]];     
      
     [self setBundles: [[NSMutableArray alloc] initWithArray:@[
-    
-      @{
-        @"bundle" : @"Drum Acoustic",
-        @"icon": @"",
-        @"files" : @[
-        
-            @"bundle_drum_kit_ac_crash",
-                                                                 @"bundle_drum_kit_ac_hihat",
-                                                                 @"bundle_drum_kit_ac_kick",
-                                                                 @"bundle_drum_kit_ac_rim",
-                                                                 @"bundle_drum_kit_ac_snare"]
+        @{
+            @"bundle" : @"Drum Acoustic",
+            @"icon": @"",
+            @"files" : @[
+               @{@"name":@"Acoustic Crash", @"icon":@"bundle_ic_ride.png", @"file" : @"bundle_drum_kit_ac_crash"},
+               @{@"name":@"Acoustic Hi-Hat", @"icon":@"bundle_ic_hihat.png", @"file" : @"bundle_drum_kit_ac_hihat"},
+               @{@"name":@"Acoustic Kick", @"icon":@"bundle_ic_kick.png", @"file" : @"bundle_drum_kit_ac_kick"},
+               @{@"name":@"Acoustic Rim", @"icon":@"bundle_ic_snare.png", @"file" : @"bundle_drum_kit_ac_rim"},
+               @{@"name":@"Acoustic Snare", @"icon":@"bundle_ic_snare.png", @"file" : @"bundle_drum_kit_ac_snare"},
+            ]
         },
-                       
-      @{@"bundle" : @"Drum Electric", @"icon": @"", @"files" : @[@"bundle_drum_kit_el_cick",
-                                                                 @"bundle_drum_kit_el_hihat_open",
-                                                                 @"bundle_drum_kit_el_hihat",
-                                                                 @"bundle_drum_kit_el_snare",
-                                                                 @"bundle_drum_kit_el_tom1",
-                                                                 @"bundle_drum_kit_el_tom2",
-                                                                 @"bundle_drum_kit_el_tom3",
-                                                                 @"bundle_drum_kit_el_tom4"]}
+                           
+        @{
+            @"bundle" : @"Drum Electric",
+            @"icon": @"",
+            @"files" : @[
+               @{@"name": @"", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+               @{@"name": @"", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"},
+               @{@"name": @"", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat"},
+               @{@"name": @"", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom1"},
+               @{@"name": @"", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom2"},
+               @{@"name": @"", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom3"},
+               @{@"name": @"", @"icon": @"bundle_ic_tom.png", @"file": @"bundle_drum_kit_el_tom4"},
+               @{@"name": @"", @"icon": @"bundle_ic_kick.png", @"file": @"bundle_drum_kit_el_cick"},
+            ]
+        }
     ]]];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
