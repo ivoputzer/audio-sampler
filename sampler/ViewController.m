@@ -8,16 +8,22 @@
 
 #import "ViewController.h"
 #import "CustomCell.h"
+#import "BundleTableCell.h"
+#import "SamplerMatrixViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
 
 @property (strong, nonatomic) NSMutableArray* objects;
 @property (strong, nonatomic) NSMutableArray* bundles;
+@property (strong, nonatomic) NSMutableArray* instruments;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *recButton;
+@property (weak, nonatomic) SamplerMatrixViewController* sampleMatrixViewController;
+@property (weak, nonatomic) IBOutlet UILabel *bundleLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *previewTable;
+@property (weak, nonatomic) IBOutlet UITableView *KitTable;
 
 @end
 
@@ -55,10 +61,19 @@
                                                                  @"bundle_drum_kit_el_tom4"]}
     ]]];
     
-    NSUserDefaults *prefBundles = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
+    [defaults setObject:self.bundles forKey:@"bundles"];
     
-    [prefBundles setObject:self.bundles forKey:@"bundles"];
-    
+}
+
+-(void)showInstrumentTable
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"bundleSelected: %d", [defaults integerForKey:@"bundle"]);
+    self.instruments = [[NSMutableArray alloc]initWithArray:[[[defaults objectForKey:@"bundles"] objectAtIndex:[defaults integerForKey:@"bundle"]]  objectForKey:@"files"]];
+    self.bundleLabel.text = self.bundles[[defaults integerForKey:@"bundle"]][@"bundle"];
+    [self.previewTable reloadData];
+    //NSLog(@"SELF.INSTRUMENT: %@", self.instruments);
 }
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
@@ -198,20 +213,36 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.bundles.count;
+    if (tableView == self.KitTable) {
+        return self.bundles.count;
+    }else{
+        return self.instruments.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
-    CustomCell *cell = [[CustomCell alloc]init];
-    
-    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    cell.trackLabel.text = self.bundles[indexPath.row][@"bundle"];
-    
-    return cell;
+    if (tableView == self.KitTable) {
+        static NSString *CellIdentifier = @"Cell";
+        CustomCell *cell = [[CustomCell alloc]init];
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        cell.trackLabel.text = self.bundles[indexPath.row][@"bundle"];
+        return cell;
+    }
+    else{
+        static NSString *CellIdentifier2 = @"BundleTableCell";
+        BundleTableCell* cell2 = [[BundleTableCell alloc]init];
+        cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier2 forIndexPath:indexPath];
+        cell2.typeOfInstrument.text = self.instruments[indexPath.row];
+        cell2.tag = indexPath.row;
+        [cell2 setDelegate:self];
+        return cell2;
+    }
+}
+
+-(void)cellClickedWithTag:(int)tag andUrl:(NSString *)typeOfInstrument
+{
+    NSLog(@"Cella cliccata con TAG: %d, con il corrispondente URL della traccia: %@",tag,typeOfInstrument);
 }
 
 /*
@@ -276,20 +307,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"La cella %d è stata cliccata", indexPath.row );
+    if (tableView == self.KitTable) {
+        NSLog(@"La cella %d è stata cliccata", indexPath.row );
+        
+        [self showAlert:self.bundles[indexPath.row]];
+        
+        NSUserDefaults *prefBundleSelected = [NSUserDefaults standardUserDefaults];
+        [prefBundleSelected setInteger:indexPath.row forKey:@"bundle"];
+        
+        [self showInstrumentTable];
+    }
     
-    [self showAlert:self.bundles[indexPath.row]];
-    
-    NSUserDefaults *prefBundleSelected = [NSUserDefaults standardUserDefaults];
-    [prefBundleSelected setInteger:indexPath.row forKey:@"bundle"];
-    
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 

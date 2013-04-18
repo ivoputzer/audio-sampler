@@ -19,6 +19,15 @@
     return self;
 }
 
+- (IBAction)insertToSampler:(id)sender {
+}
+
+- (IBAction)playInstrumentSelected:(id)sender {
+    
+    [self.delegate cellClickedWithTag:self.tag andUrl:self.typeOfInstrument.text];
+    
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

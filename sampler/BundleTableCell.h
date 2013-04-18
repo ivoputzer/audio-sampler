@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BundleTable;
+
 @interface BundleTableCell : UITableViewCell
 
+@property (weak) __weak id<BundleTable> delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet UILabel *typeOfInstrument;
+@property (nonatomic) int tag;
+
 @end
+
+@protocol BundleTable <NSObject>
+
+@optional
+-(void)cellClickedWithTag:(int)tag andUrl:(NSString*)typeOfInstrument;
+
+@end
+

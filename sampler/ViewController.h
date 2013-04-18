@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "BundleTableCell.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+@interface ViewController : UIViewController <UITableViewDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate, BundleTable>
 {
     AVAudioPlayer *audioPlayer;
     AVAudioRecorder *audioRecorder;
