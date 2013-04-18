@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "CustomCell.h"
 #import "BundleTableCell.h"
+#import "SampleTableCell.h"
 #import "SamplerMatrixViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
@@ -85,16 +85,12 @@
 {
     if ( self.bundlesTable == table ) // the one on the left
     {        
-        CustomCell *cell = [table dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:index];
-        
-        cell.trackLabel.text = self.bundles[index.row][@"bundle"];
-        
-        [cell setup];
-        return cell; /* todo : implement right method */
-    }
+        BundleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"BundleTableCell" forIndexPath:index];
+                
+        return [cell withInfo:@{@"name": self.bundles[index.row][@"bundle"]}];     }
     else
     {     
-        BundleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"BundleTableCell" forIndexPath:index];
+        SampleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"SampleTableCell" forIndexPath:index];
                 
         return [cell withInfo:self.samples[index.row]];
     }
@@ -102,16 +98,16 @@
 
 - (void)tableView:(UITableView *)table didSelectRowAtIndexPath:(NSIndexPath *)index
 {
-    if ( self.bundlesTable == table ) [self selectBundle: index.row];
+    if ( self.bundlesTable == table ){ [self selectBundle: index.row]; }
 }
 
--(void) selectBundle: (int) selection
-{
+-(void) selectBundle: (NSInteger) selection
+{   
+    [self.bundleName setText: self.bundles[selection][@"bundle"]]; // fuck off, never change this again
+    
     [self setSamples: [[NSMutableArray alloc] initWithArray: self.bundles[selection][@"files"]]];
     
-    [self setBundleName: self.bundles[selection][@"bundle"]];
-    
-    [self.bundlesTable reloadData];
+    [self.samplesTable reloadData];
 }
 
 

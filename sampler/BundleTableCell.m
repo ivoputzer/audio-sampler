@@ -1,55 +1,44 @@
 //
-//  BundleTableCell.m
+//  CustomCell.m
 //  sampler
 //
-//  Created by Ivo von Putzer on 18/04/13.
+//  Created by Nico Santoro on 15/04/13.
 //  Copyright (c) 2013 Nico Santoro. All rights reserved.
 //
 
 #import "BundleTableCell.h"
-#import <AVFoundation/AVFoundation.h>
 
 @interface BundleTableCell()
 
-@property (strong, nonatomic) AVAudioPlayer *player;
-
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
-
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *bundleName;
 
 @end
 
 @implementation BundleTableCell
-
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]; return self;
 }
 
--(BundleTableCell*)withInfo:(NSDictionary *)info
+- (BundleTableCell*) withInfo: (NSDictionary*) info
 {
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:info[@"file"] ofType:@"wav"]];
+    [self.bundleName setText: info[@"name"]];
     
-    [self setPlayer:[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil]]; [self.player prepareToPlay];
-
-    // todo : check if image is in defaults[samples] aready
-    
-    [self.icon setImage:[UIImage imageNamed:info[@"icon"]]];
-     
-    [self.name setText:info[@"name"]];
+    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressDetected:)];
+    [self addGestureRecognizer:gesture];
     
     return self;
 }
 
-- (IBAction)add:(UIButton*)sender // could become remove
+- (void)longPressDetected:(UILongPressGestureRecognizer*)sender
 {
-    // todo : save to samples defaults
+    NSLog(@"LONG-PRESSED");
 }
 
-- (IBAction)play:(UIButton*)sender
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    [self.player play];
+    [super setSelected:selected animated:animated];
 }
 
 @end
