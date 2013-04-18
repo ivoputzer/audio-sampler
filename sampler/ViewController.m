@@ -226,34 +226,24 @@
 
 /*COMMIT*/
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.KitTable) {
-        return self.bundles.count;
-    }else{
-        return self.instruments.count;
-    }
+    return (self.KitTable == table) ? self.bundles.count : self.instruments.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)index
 {
-    if (tableView == self.KitTable) {
-        static NSString *CellIdentifier = @"Cell";
-        CustomCell *cell = [[CustomCell alloc]init];
-        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        cell.trackLabel.text = self.bundles[indexPath.row][@"bundle"];
-        return cell;
+    if ( self.KitTable == table ) // the one on the left
+    {        
+        CustomCell *cell = [table dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:index];
+        
+        cell.trackLabel.text = self.bundles[index.row][@"bundle"]; return cell; /* todo : implement right method */
     }
-    else{
-        static NSString *CellIdentifier2 = @"BundleTableCell";
-        BundleTableCell* cell2 = [[BundleTableCell alloc]init];
-        cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier2 forIndexPath:indexPath];
-        cell2.tag = indexPath.row;
-        [cell2 setDelegate:self];
-        
-        return cell2;
-        
-        // return [cell2 setInfo: self.instruments[indexPath.row] andTag:indexPath.row];
+    else
+    {     
+        BundleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"BundleTableCell" forIndexPath:index];
+                
+        return [cell withInfo:self.instruments[index.row]];        
     }
 }
 

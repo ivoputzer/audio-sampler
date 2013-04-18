@@ -10,6 +10,6 @@
 
 @interface BundleTableCell : UITableViewCell
 
--(BundleTableCell*)setInfo:(NSArray*)info;
+-(BundleTableCell*) withInfo:(NSArray*)info;
 
 @end

@@ -24,7 +24,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]; return self;
 }
 
--(BundleTableCell*)setInfo:(NSArray*)info
+-(BundleTableCell*)withInfo:(NSArray *)info
 {
     return self;
 }
