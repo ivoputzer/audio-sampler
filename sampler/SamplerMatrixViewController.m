@@ -33,24 +33,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]; return self;
 }
 
-- (void)pushAudio:(NSString*) path // adds a single audio file to the (self.audio) array
-{
-    NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:path ofType:@"wav"]];
-        
-    AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    
-    [self.audio insertObject:audio atIndex: self.audio.count];
-        
-    [audio prepareToPlay];
-}
-
-- (void)loadAudio: (NSArray*) files
-{
-    [files enumerateObjectsUsingBlock:^(id obj, NSUInteger i, BOOL *stop) { [self pushAudio: obj]; }];
-        
-    for ( int i = 0; i < [self.audio count] * 16; i++) self.matrix[i] = @(NO); // default values for the matrix
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -61,31 +43,40 @@
         
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    // va cambiato!! (defaults-samples) deve contenere un array di samples selezionati dall'utente
-    _bundleSelected = [defaults integerForKey:@"bundle"];
-    
-    NSLog(@"bundleSelected: %d", _bundleSelected); // not pass the bundle but the samples already!--- IMPORTANT!
-    
-    [self loadAudio: [[[defaults objectForKey:@"bundles"] objectAtIndex:_bundleSelected]  objectForKey:@"files"]];
-    
-    /*
-     when saving to phone user defaults we better save the state and samples that have been added last
-     */
-
-    // NSArray *matrix = [defaults objectForKey:@"matrix"];
-    
-    // if ( matrix.count == self.audio.count * 16 ) { [self.matrix addObjectsFromArray: matrix]; }
+    [self loadAudio: [defaults objectForKey:@"activeSamples"] ];
 }
 
 -(void)viewDidAppear:(BOOL)animated { [self startAudio]; }
 
 -(void)viewDidDisappear:(BOOL)animated
 {    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    [defaults setObject:self.matrix forKey:@"matrix"];
+    // [defaults setObject:self.matrix forKey:@"matrix"];
     
     [self stopAudio];
+}
+
+- (void)pushAudio:(NSString*) path // adds a single audio file to the (self.audio) array
+{
+    NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:path ofType:@"wav"]];
+    
+    AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [self.audio insertObject:audio atIndex: self.audio.count];
+    
+    [audio prepareToPlay];
+}
+
+- (void)loadAudio: (NSArray*) samples
+{
+    [samples enumerateObjectsUsingBlock:^(NSDictionary *sample, NSUInteger i, BOOL *stop){
+        
+        [self pushAudio: sample[@"file"]];
+    
+    }];
+    
+    for ( int i = 0; i < [self.audio count] * 16; i++) self.matrix[i] = @(NO); // default values for the matrix
 }
 
 -(void) playAudio
@@ -94,7 +85,7 @@
              
         if ( [self.matrix[self.current + index * 16] boolValue] )
         {
-            if ( [audio isPlaying] ) { [audio setCurrentTime:0]; }else{ [audio play]; } // [audio setCurrentTime:0]; [audio play];
+            if ( [audio isPlaying] ) { [audio setCurrentTime:0]; }else{ [audio play]; }
         }
      
     }];

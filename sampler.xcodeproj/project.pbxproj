@@ -54,6 +54,7 @@
 		2E8B46B7171FFBA3009B56E5 /* bundle_ic_trumpet.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A3171FFBA3009B56E5 /* bundle_ic_trumpet.png */; };
 		2E8B46B8171FFBA3009B56E5 /* bundle_ic_violin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A4171FFBA3009B56E5 /* bundle_ic_violin.png */; };
 		2E8B46B9171FFBA3009B56E5 /* bundle_ic_windbell.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A5171FFBA3009B56E5 /* bundle_ic_windbell.png */; };
+		2E8B46BE17203DE0009B56E5 /* ic_cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46BD17203DE0009B56E5 /* ic_cross.png */; };
 		2EAF8F34171C4FBF0011B0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F33171C4FBF0011B0F9 /* UIKit.framework */; };
 		2EAF8F36171C4FBF0011B0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F35171C4FBF0011B0F9 /* Foundation.framework */; };
 		2EAF8F38171C4FBF0011B0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F37171C4FBF0011B0F9 /* CoreGraphics.framework */; };
@@ -143,6 +144,7 @@
 		2E8B46A3171FFBA3009B56E5 /* bundle_ic_trumpet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_trumpet.png; sourceTree = "<group>"; };
 		2E8B46A4171FFBA3009B56E5 /* bundle_ic_violin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_violin.png; sourceTree = "<group>"; };
 		2E8B46A5171FFBA3009B56E5 /* bundle_ic_windbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_windbell.png; sourceTree = "<group>"; };
+		2E8B46BD17203DE0009B56E5 /* ic_cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_cross.png; sourceTree = "<group>"; };
 		2EAF8F30171C4FBF0011B0F9 /* Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EAF8F33171C4FBF0011B0F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2EAF8F35171C4FBF0011B0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -290,6 +292,7 @@
 				2E8B4688171FDE4D009B56E5 /* ic_play.png */,
 				2E774F2D17202DB4001E9BF3 /* ic_round.png */,
 				2E8B4689171FDE4D009B56E5 /* ic_plus.png */,
+				2E8B46BD17203DE0009B56E5 /* ic_cross.png */,
 				2EED6D05171D3411003B2709 /* Tracks */,
 				2EED6D24171D5F18003B2709 /* Images */,
 				2EAF8F39171C4FBF0011B0F9 /* Sampler */,
@@ -535,6 +538,7 @@
 				2E8B46B8171FFBA3009B56E5 /* bundle_ic_violin.png in Resources */,
 				2E8B46B9171FFBA3009B56E5 /* bundle_ic_windbell.png in Resources */,
 				2E774F2E17202DB4001E9BF3 /* ic_round.png in Resources */,
+				2E8B46BE17203DE0009B56E5 /* ic_cross.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

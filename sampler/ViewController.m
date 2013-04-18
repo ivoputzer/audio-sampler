@@ -67,9 +67,11 @@
         }
     ]]];
 
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    // nice to have everywhere
-    [[NSUserDefaults standardUserDefaults] setObject:self.bundles forKey:@"bundles"];
+    [defaults setObject:self.bundles forKey:@"bundles"];
+    
+    [defaults setObject:@[] forKey:@"activeSamples"];
 }
 
 
@@ -86,9 +88,11 @@
     if ( self.bundlesTable == table ) // the one on the left
     {        
         BundleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"BundleTableCell" forIndexPath:index];
-        //[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
-        return [cell withInfo:@{@"name": self.bundles[index.row][@"bundle"]}];     }
+        
+        return [cell withInfo:@{@"name": self.bundles[index.row][@"bundle"]}];
+    }
     else
     {     
         SampleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"SampleTableCell" forIndexPath:index];
@@ -110,158 +114,5 @@
     
     [self.samplesTable reloadData];
 }
-
-
-
-/*
- 
-------------------------- OLD STUFF WE USED FOR RECORDING THE MICROPHONE -------------------------
- 
- 
- - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
- {
- [self.playButton setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
- }
- 
- - (IBAction)startRecording:(id)sender {
- 
- BOOL animation = [sender tag];
- 
- [sender setTag:![sender tag]];
- 
- if(!animation){
- 
- [self.recButton setImage:[UIImage imageNamed:@"stop.png"] forState:UIControlStateNormal];
- 
- NSLog(@"startRecording");
- audioRecorder = nil;
- 
- // Init audio with record capability
- AVAudioSession *audioSession = [AVAudioSession sharedInstance];
- [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
- 
- NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc] initWithCapacity:10];
- if(recordEncoding == ENC_PCM)
- {
- [recordSettings setObject:[NSNumber numberWithInt: kAudioFormatLinearPCM] forKey: AVFormatIDKey];
- [recordSettings setObject:[NSNumber numberWithFloat:44100.0] forKey: AVSampleRateKey];
- [recordSettings setObject:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
- [recordSettings setObject:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
- [recordSettings setObject:[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
- [recordSettings setObject:[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
- }
- else
- {
- NSNumber *formatObject;
- 
- switch (recordEncoding) {
- case (ENC_AAC):
- formatObject = [NSNumber numberWithInt: kAudioFormatMPEG4AAC];
- break;
- case (ENC_ALAC):
- formatObject = [NSNumber numberWithInt: kAudioFormatAppleLossless];
- break;
- case (ENC_IMA4):
- formatObject = [NSNumber numberWithInt: kAudioFormatAppleIMA4];
- break;
- case (ENC_ILBC):
- formatObject = [NSNumber numberWithInt: kAudioFormatiLBC];
- break;
- case (ENC_ULAW):
- formatObject = [NSNumber numberWithInt: kAudioFormatULaw];
- break;
- default:
- formatObject = [NSNumber numberWithInt: kAudioFormatAppleIMA4];
- }
- 
- [recordSettings setObject:formatObject forKey: AVFormatIDKey];
- [recordSettings setObject:[NSNumber numberWithFloat:44100.0] forKey: AVSampleRateKey];
- [recordSettings setObject:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
- [recordSettings setObject:[NSNumber numberWithInt:12800] forKey:AVEncoderBitRateKey];
- [recordSettings setObject:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
- [recordSettings setObject:[NSNumber numberWithInt: AVAudioQualityHigh] forKey: AVEncoderAudioQualityKey];
- }
- 
- NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
- NSString* documentDirectory = paths[0];
- 
- NSString* databaseFile = [documentDirectory stringByAppendingPathComponent:@"provaRec"];
- 
- NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@", databaseFile]];
- 
- 
- NSError *error = nil;
- audioRecorder = [[ AVAudioRecorder alloc] initWithURL:url settings:recordSettings error:&error];
- 
- if ([audioRecorder prepareToRecord] == YES){
- [audioRecorder record];
- }else {
- int errorCode = CFSwapInt32HostToBig ([error code]);
- NSLog(@"Error: %@ [%4.4s])" , [error localizedDescription], (char*)&errorCode);
- 
- }
- NSLog(@"recording");
- }else{
- [self.recButton setImage:[UIImage imageNamed:@"rec.png"] forState:UIControlStateNormal];
- NSLog(@"stopRecording");
- [audioRecorder stop];
- NSLog(@"stopped");
- }
- 
- }
- 
- - (IBAction)playRecording:(id)sender {
- 
- BOOL animation = [sender tag];
- 
- [sender setTag:![sender tag]];
- 
- if(!animation){
- 
- [self.playButton setImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
- 
- NSLog(@"playRecording");
- // Init audio with playback capability
- AVAudioSession *audioSession = [AVAudioSession sharedInstance];
- [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
- 
- NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
- NSString* documentDirectory = paths[0];
- 
- NSString* databaseFile = [documentDirectory stringByAppendingPathComponent:@"provaRec"];
- 
- NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@", databaseFile]];
- NSError *error;
- audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
- 
- [audioPlayer addObserver:self forKeyPath:@"currentTime" options:NSKeyValueObservingOptionNew context:nil];
- 
- [audioPlayer setDelegate:self];
- NSLog(@"Duration: %f", audioPlayer.duration);
- audioPlayer.numberOfLoops = 0;
- [audioPlayer play];
- NSLog(@"playing");
- }else{
- [self.playButton setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
- [audioPlayer pause];
- }
- 
- }*/
-
-/****** mergin issue ***
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (tableView == self.KitTable) {
-        NSLog(@"La cella %d è stata cliccata", indexPath.row );
-        
-        NSUserDefaults *prefBundleSelected = [NSUserDefaults standardUserDefaults];
-        [prefBundleSelected setInteger:indexPath.row forKey:@"bundle"];
-        
-        [self showInstrumentTable];
-    }
-    
-}
-
-*/
 
 @end

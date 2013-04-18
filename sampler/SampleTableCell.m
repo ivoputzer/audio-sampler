@@ -17,7 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
+
 @property (weak, nonatomic) IBOutlet UIButton *addIcon;
+
+@property NSDictionary *info;
 
 @end
 
@@ -32,10 +35,10 @@
 -(SampleTableCell*)withInfo:(NSDictionary *)info
 {
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:info[@"file"] ofType:@"wav"]];
-    
+        
     [self setPlayer:[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil]]; [self.player prepareToPlay];
-
-    // todo : check if image is in defaults[samples] aready
+    
+    [self setInfo:info];
     
     [self.icon setImage:[UIImage imageNamed:info[@"icon"]]];
      
@@ -46,7 +49,26 @@
 
 - (IBAction)add:(UIButton*)sender // could become remove
 {
-    // todo : save to samples defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ( 0 == self.addIcon.tag )
+    {
+        [self.addIcon setImage:[UIImage imageNamed: @"ic_cross.png"] forState:UIControlStateNormal];
+        
+        [self.addIcon setTag: 1];
+        
+        NSMutableArray *samples = [[NSMutableArray alloc] initWithArray:[defaults objectForKey:@"activeSamples"]];
+        
+        [samples addObject: self.info];
+        
+        [defaults setObject:samples forKey:@"activeSamples"];
+    }
+    else
+    {
+        [self.addIcon setImage:[UIImage imageNamed: @"ic_plus.png"] forState:UIControlStateNormal];
+        
+        [self.addIcon setTag: 0];
+    }
 }
 
 - (IBAction)play:(UIButton*)sender
