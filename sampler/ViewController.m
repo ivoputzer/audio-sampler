@@ -45,13 +45,13 @@
      
     [self setBundles: [[NSMutableArray alloc] initWithArray:@[
     
-      @{@"bundle" : @"drum acoustic", @"icon": @"", @"files" : @[@"bundle_drum_kit_ac_crash",
+      @{@"bundle" : @"Drum Acoustic", @"icon": @"", @"files" : @[@"bundle_drum_kit_ac_crash",
                                                                  @"bundle_drum_kit_ac_hihat",
                                                                  @"bundle_drum_kit_ac_kick",
                                                                  @"bundle_drum_kit_ac_rim",
                                                                  @"bundle_drum_kit_ac_snare"]},
                        
-      @{@"bundle" : @"drum electric", @"icon": @"", @"files" : @[@"bundle_drum_kit_el_cick",
+      @{@"bundle" : @"Drum Electric", @"icon": @"", @"files" : @[@"bundle_drum_kit_el_cick",
                                                                  @"bundle_drum_kit_el_hihat_open",
                                                                  @"bundle_drum_kit_el_hihat",
                                                                  @"bundle_drum_kit_el_snare",
