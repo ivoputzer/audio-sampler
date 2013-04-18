@@ -2,8 +2,8 @@
 //  ViewController.m
 //  Sampler
 //
-//  Created by Nico Santoro on 15/04/13.
-//  Copyright (c) 2013 Nico Santoro. All rights reserved.
+//  Created by Ivo von Putzer on 15/04/13.
+//  Copyright (c) 2013 Ivo von Putzer. All rights reserved.
 //
 
 #import "ViewController.h"
