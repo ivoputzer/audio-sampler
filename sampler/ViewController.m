@@ -88,7 +88,6 @@
         BundleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"BundleTableCell" forIndexPath:index];
         //[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
-        
         return [cell withInfo:@{@"name": self.bundles[index.row][@"bundle"]}];     }
     else
     {     
