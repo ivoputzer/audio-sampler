@@ -87,7 +87,10 @@
     {        
         CustomCell *cell = [table dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:index];
         
-        cell.trackLabel.text = self.bundles[index.row][@"bundle"]; return cell; /* todo : implement right method */
+        cell.trackLabel.text = self.bundles[index.row][@"bundle"];
+        
+        [cell setup];
+        return cell; /* todo : implement right method */
     }
     else
     {     
@@ -96,7 +99,6 @@
         return [cell withInfo:self.samples[index.row]];
     }
 }
-
 
 - (void)tableView:(UITableView *)table didSelectRowAtIndexPath:(NSIndexPath *)index
 {
@@ -248,5 +250,21 @@
  }
  
  }*/
+
+/****** mergin issue ***
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.KitTable) {
+        NSLog(@"La cella %d è stata cliccata", indexPath.row );
+        
+        NSUserDefaults *prefBundleSelected = [NSUserDefaults standardUserDefaults];
+        [prefBundleSelected setInteger:indexPath.row forKey:@"bundle"];
+        
+        [self showInstrumentTable];
+    }
+    
+}
+
+*/
 
 @end

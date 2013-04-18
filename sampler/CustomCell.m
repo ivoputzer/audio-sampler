@@ -15,6 +15,17 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]; return self;
 }
 
+- (void)setup{
+    
+    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressDetected:)];
+    [self addGestureRecognizer:gesture];
+}
+
+- (void)longPressDetected:(UILongPressGestureRecognizer*)sender
+{
+    NSLog(@"LONG-PRESSED");
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
