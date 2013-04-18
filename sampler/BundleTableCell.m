@@ -11,6 +11,8 @@
 @interface BundleTableCell()
 
 @property (nonatomic) NSArray* info;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UILabel *nameSampler;
 
 @end
 
@@ -26,10 +28,14 @@
 {
     return self;
 }
+- (IBAction)add:(id)sender {
+}
+- (IBAction)play:(id)sender {
+}
 
-/* addSample */
+/* add */
 
-/* playSample */
+/* play */
 
 
 /*- (void)setSelected:(BOOL)selected animated:(BOOL)animated
