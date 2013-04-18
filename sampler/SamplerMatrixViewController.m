@@ -33,21 +33,20 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]; return self;
 }
 
+- (void)pushAudio:(NSString*) path // adds a single audio file to the (self.audio) array
+{
+    NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:path ofType:@"wav"]];
+    
+    AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [self.audio insertObject:audio atIndex: self.audio.count];
+        
+    [audio prepareToPlay];
+}
+
 - (void)loadAudio: (NSArray*) files
-{    
-    [files enumerateObjectsUsingBlock:^(id obj, NSUInteger i, BOOL *stop) {
-        
-        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:obj ofType:@"wav"]];
-                
-        AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        
-        //NSLog(@"AUDIO: %@", audio);
-        
-        [self.audio insertObject:audio atIndex:i];
-        
-        [audio prepareToPlay];
-        
-    }];
+{
+    [files enumerateObjectsUsingBlock:^(id obj, NSUInteger i, BOOL *stop) { [self pushAudio: obj]; }];
         
     for ( int i = 0; i < [self.audio count] * 16; i++) self.matrix[i] = @(NO); // default values for the matrix
 }
@@ -55,53 +54,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"viewDidLoad");
-    
+        
     [self setMatrix:[[NSMutableArray alloc] initWithArray:@[]]];
     
     [self setAudio: [[NSMutableArray alloc] initWithArray:@[]]];
-    
-    /* INSERITO LA SERA */
+        
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    // va cambiato!! (defaults-samples) deve contenere un array di samples selezionati dall'utente
     _bundleSelected = [defaults integerForKey:@"bundle"];
-    NSLog(@"bundleSelected: %d", _bundleSelected);
+    
+    NSLog(@"bundleSelected: %d", _bundleSelected); // not pass the bundle but the samples already!--- IMPORTANT!
     
     [self loadAudio: [[[defaults objectForKey:@"bundles"] objectAtIndex:_bundleSelected]  objectForKey:@"files"]];
     
-    /* INSERITO LA SERA */
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
     /*
-        when saving to phone user defaults we better save the state and samples that have been added last
-    */
+     when saving to phone user defaults we better save the state and samples that have been added last
+     */
+
+    // NSArray *matrix = [defaults objectForKey:@"matrix"];
     
-    // A QUESTO PUNTO NON SERVE A NULLA PERCHE' IL METODO "DID APPEAR" VIENE CHIAMATO DOPO IL VIEWDIDLOAD
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [self loadAudio: [[[defaults objectForKey:@"bundles"] objectAtIndex:0]  objectForKey:@"files"]];
-        
-    // NSArray *provaArray = [defaults objectForKey:@"matrix"]; NSLog(@"Array: %@", provaArray);
-    
-    [self startAudio];
-    NSLog(@"did appear");
-    
+    // if ( matrix.count == self.audio.count * 16 ) { [self.matrix addObjectsFromArray: matrix]; }
 }
 
--(void)viewDidDisappear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated { [self startAudio]; }
+
+-(void)viewDidDisappear:(BOOL)animated
+{    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
-    //NSLog(@"Array in disappear %@", self.matrix);
-    
-    // saving an MutableArray
-    [prefs setObject:self.matrix forKey:@"matrix"];
+    [defaults setObject:self.matrix forKey:@"matrix"];
     
     [self stopAudio];
-    NSLog(@"did disappear");
 }
 
 -(void) playAudio

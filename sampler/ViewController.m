@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *recButton;
 
+@property (weak, nonatomic) IBOutlet UITableView *previewTable;
+
 @end
 
 @implementation ViewController
