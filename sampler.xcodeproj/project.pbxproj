@@ -33,6 +33,26 @@
 		2E8B468A171FDE4D009B56E5 /* ic_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4688171FDE4D009B56E5 /* ic_play.png */; };
 		2E8B468B171FDE4D009B56E5 /* ic_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4689171FDE4D009B56E5 /* ic_plus.png */; };
 		2E8B4691171FE118009B56E5 /* BundleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B4690171FE118009B56E5 /* BundleTableCell.m */; };
+		2E8B46A6171FFBA3009B56E5 /* bundle_ic_ac_guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4692171FFBA2009B56E5 /* bundle_ic_ac_guitar.png */; };
+		2E8B46A7171FFBA3009B56E5 /* bundle_ic_bell.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4693171FFBA2009B56E5 /* bundle_ic_bell.png */; };
+		2E8B46A8171FFBA3009B56E5 /* bundle_ic_clap.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4694171FFBA2009B56E5 /* bundle_ic_clap.png */; };
+		2E8B46A9171FFBA3009B56E5 /* bundle_ic_drum.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4695171FFBA3009B56E5 /* bundle_ic_drum.png */; };
+		2E8B46AA171FFBA3009B56E5 /* bundle_ic_flute.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4696171FFBA3009B56E5 /* bundle_ic_flute.png */; };
+		2E8B46AB171FFBA3009B56E5 /* bundle_ic_glockenspiel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4697171FFBA3009B56E5 /* bundle_ic_glockenspiel.png */; };
+		2E8B46AC171FFBA3009B56E5 /* bundle_ic_guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4698171FFBA3009B56E5 /* bundle_ic_guitar.png */; };
+		2E8B46AD171FFBA3009B56E5 /* bundle_ic_hihat.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B4699171FFBA3009B56E5 /* bundle_ic_hihat.png */; };
+		2E8B46AE171FFBA3009B56E5 /* bundle_ic_kick.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B469A171FFBA3009B56E5 /* bundle_ic_kick.png */; };
+		2E8B46AF171FFBA3009B56E5 /* bundle_ic_piano.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B469B171FFBA3009B56E5 /* bundle_ic_piano.png */; };
+		2E8B46B0171FFBA3009B56E5 /* bundle_ic_ride.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B469C171FFBA3009B56E5 /* bundle_ic_ride.png */; };
+		2E8B46B1171FFBA3009B56E5 /* bundle_ic_sax.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B469D171FFBA3009B56E5 /* bundle_ic_sax.png */; };
+		2E8B46B2171FFBA3009B56E5 /* bundle_ic_snare.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B469E171FFBA3009B56E5 /* bundle_ic_snare.png */; };
+		2E8B46B3171FFBA3009B56E5 /* bundle_ic_synth.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B469F171FFBA3009B56E5 /* bundle_ic_synth.png */; };
+		2E8B46B4171FFBA3009B56E5 /* bundle_ic_tamburine.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A0171FFBA3009B56E5 /* bundle_ic_tamburine.png */; };
+		2E8B46B5171FFBA3009B56E5 /* bundle_ic_tom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A1171FFBA3009B56E5 /* bundle_ic_tom.png */; };
+		2E8B46B6171FFBA3009B56E5 /* bundle_ic_toms.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A2171FFBA3009B56E5 /* bundle_ic_toms.png */; };
+		2E8B46B7171FFBA3009B56E5 /* bundle_ic_trumpet.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A3171FFBA3009B56E5 /* bundle_ic_trumpet.png */; };
+		2E8B46B8171FFBA3009B56E5 /* bundle_ic_violin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A4171FFBA3009B56E5 /* bundle_ic_violin.png */; };
+		2E8B46B9171FFBA3009B56E5 /* bundle_ic_windbell.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B46A5171FFBA3009B56E5 /* bundle_ic_windbell.png */; };
 		2EAF8F34171C4FBF0011B0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F33171C4FBF0011B0F9 /* UIKit.framework */; };
 		2EAF8F36171C4FBF0011B0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F35171C4FBF0011B0F9 /* Foundation.framework */; };
 		2EAF8F38171C4FBF0011B0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF8F37171C4FBF0011B0F9 /* CoreGraphics.framework */; };
@@ -101,6 +121,26 @@
 		2E8B4689171FDE4D009B56E5 /* ic_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_plus.png; sourceTree = "<group>"; };
 		2E8B468F171FE117009B56E5 /* BundleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BundleTableCell.h; path = sampler/BundleTableCell.h; sourceTree = SOURCE_ROOT; };
 		2E8B4690171FE118009B56E5 /* BundleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BundleTableCell.m; path = sampler/BundleTableCell.m; sourceTree = SOURCE_ROOT; };
+		2E8B4692171FFBA2009B56E5 /* bundle_ic_ac_guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_ac_guitar.png; sourceTree = "<group>"; };
+		2E8B4693171FFBA2009B56E5 /* bundle_ic_bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_bell.png; sourceTree = "<group>"; };
+		2E8B4694171FFBA2009B56E5 /* bundle_ic_clap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_clap.png; sourceTree = "<group>"; };
+		2E8B4695171FFBA3009B56E5 /* bundle_ic_drum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_drum.png; sourceTree = "<group>"; };
+		2E8B4696171FFBA3009B56E5 /* bundle_ic_flute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_flute.png; sourceTree = "<group>"; };
+		2E8B4697171FFBA3009B56E5 /* bundle_ic_glockenspiel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_glockenspiel.png; sourceTree = "<group>"; };
+		2E8B4698171FFBA3009B56E5 /* bundle_ic_guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_guitar.png; sourceTree = "<group>"; };
+		2E8B4699171FFBA3009B56E5 /* bundle_ic_hihat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_hihat.png; sourceTree = "<group>"; };
+		2E8B469A171FFBA3009B56E5 /* bundle_ic_kick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_kick.png; sourceTree = "<group>"; };
+		2E8B469B171FFBA3009B56E5 /* bundle_ic_piano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_piano.png; sourceTree = "<group>"; };
+		2E8B469C171FFBA3009B56E5 /* bundle_ic_ride.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_ride.png; sourceTree = "<group>"; };
+		2E8B469D171FFBA3009B56E5 /* bundle_ic_sax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_sax.png; sourceTree = "<group>"; };
+		2E8B469E171FFBA3009B56E5 /* bundle_ic_snare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_snare.png; sourceTree = "<group>"; };
+		2E8B469F171FFBA3009B56E5 /* bundle_ic_synth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_synth.png; sourceTree = "<group>"; };
+		2E8B46A0171FFBA3009B56E5 /* bundle_ic_tamburine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_tamburine.png; sourceTree = "<group>"; };
+		2E8B46A1171FFBA3009B56E5 /* bundle_ic_tom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_tom.png; sourceTree = "<group>"; };
+		2E8B46A2171FFBA3009B56E5 /* bundle_ic_toms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_toms.png; sourceTree = "<group>"; };
+		2E8B46A3171FFBA3009B56E5 /* bundle_ic_trumpet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_trumpet.png; sourceTree = "<group>"; };
+		2E8B46A4171FFBA3009B56E5 /* bundle_ic_violin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_violin.png; sourceTree = "<group>"; };
+		2E8B46A5171FFBA3009B56E5 /* bundle_ic_windbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bundle_ic_windbell.png; sourceTree = "<group>"; };
 		2EAF8F30171C4FBF0011B0F9 /* Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EAF8F33171C4FBF0011B0F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2EAF8F35171C4FBF0011B0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -168,6 +208,7 @@
 		2E8B466A171F0257009B56E5 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				2E8B46BA171FFBBF009B56E5 /* Images */,
 				2E8B466B171F0264009B56E5 /* Bundles */,
 			);
 			name = Samples;
@@ -207,6 +248,33 @@
 				2E8B4678171F027C009B56E5 /* bundle_drum_kit_el_tom4.wav */,
 			);
 			name = "drum kit electric";
+			sourceTree = "<group>";
+		};
+		2E8B46BA171FFBBF009B56E5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B4692171FFBA2009B56E5 /* bundle_ic_ac_guitar.png */,
+				2E8B4693171FFBA2009B56E5 /* bundle_ic_bell.png */,
+				2E8B4694171FFBA2009B56E5 /* bundle_ic_clap.png */,
+				2E8B4695171FFBA3009B56E5 /* bundle_ic_drum.png */,
+				2E8B4696171FFBA3009B56E5 /* bundle_ic_flute.png */,
+				2E8B4697171FFBA3009B56E5 /* bundle_ic_glockenspiel.png */,
+				2E8B4698171FFBA3009B56E5 /* bundle_ic_guitar.png */,
+				2E8B4699171FFBA3009B56E5 /* bundle_ic_hihat.png */,
+				2E8B469A171FFBA3009B56E5 /* bundle_ic_kick.png */,
+				2E8B469B171FFBA3009B56E5 /* bundle_ic_piano.png */,
+				2E8B469C171FFBA3009B56E5 /* bundle_ic_ride.png */,
+				2E8B469D171FFBA3009B56E5 /* bundle_ic_sax.png */,
+				2E8B469E171FFBA3009B56E5 /* bundle_ic_snare.png */,
+				2E8B469F171FFBA3009B56E5 /* bundle_ic_synth.png */,
+				2E8B46A0171FFBA3009B56E5 /* bundle_ic_tamburine.png */,
+				2E8B46A1171FFBA3009B56E5 /* bundle_ic_tom.png */,
+				2E8B46A2171FFBA3009B56E5 /* bundle_ic_toms.png */,
+				2E8B46A3171FFBA3009B56E5 /* bundle_ic_trumpet.png */,
+				2E8B46A4171FFBA3009B56E5 /* bundle_ic_violin.png */,
+				2E8B46A5171FFBA3009B56E5 /* bundle_ic_windbell.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		2EAF8F27171C4FBF0011B0F9 = {
@@ -443,6 +511,26 @@
 				2E8B4685171F027C009B56E5 /* bundle_drum_kit_el_tom4.wav in Resources */,
 				2E8B468A171FDE4D009B56E5 /* ic_play.png in Resources */,
 				2E8B468B171FDE4D009B56E5 /* ic_plus.png in Resources */,
+				2E8B46A6171FFBA3009B56E5 /* bundle_ic_ac_guitar.png in Resources */,
+				2E8B46A7171FFBA3009B56E5 /* bundle_ic_bell.png in Resources */,
+				2E8B46A8171FFBA3009B56E5 /* bundle_ic_clap.png in Resources */,
+				2E8B46A9171FFBA3009B56E5 /* bundle_ic_drum.png in Resources */,
+				2E8B46AA171FFBA3009B56E5 /* bundle_ic_flute.png in Resources */,
+				2E8B46AB171FFBA3009B56E5 /* bundle_ic_glockenspiel.png in Resources */,
+				2E8B46AC171FFBA3009B56E5 /* bundle_ic_guitar.png in Resources */,
+				2E8B46AD171FFBA3009B56E5 /* bundle_ic_hihat.png in Resources */,
+				2E8B46AE171FFBA3009B56E5 /* bundle_ic_kick.png in Resources */,
+				2E8B46AF171FFBA3009B56E5 /* bundle_ic_piano.png in Resources */,
+				2E8B46B0171FFBA3009B56E5 /* bundle_ic_ride.png in Resources */,
+				2E8B46B1171FFBA3009B56E5 /* bundle_ic_sax.png in Resources */,
+				2E8B46B2171FFBA3009B56E5 /* bundle_ic_snare.png in Resources */,
+				2E8B46B3171FFBA3009B56E5 /* bundle_ic_synth.png in Resources */,
+				2E8B46B4171FFBA3009B56E5 /* bundle_ic_tamburine.png in Resources */,
+				2E8B46B5171FFBA3009B56E5 /* bundle_ic_tom.png in Resources */,
+				2E8B46B6171FFBA3009B56E5 /* bundle_ic_toms.png in Resources */,
+				2E8B46B7171FFBA3009B56E5 /* bundle_ic_trumpet.png in Resources */,
+				2E8B46B8171FFBA3009B56E5 /* bundle_ic_violin.png in Resources */,
+				2E8B46B9171FFBA3009B56E5 /* bundle_ic_windbell.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
