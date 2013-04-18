@@ -34,11 +34,11 @@
 }
 
 - (void)loadAudio: (NSArray*) files
-{
+{    
     [files enumerateObjectsUsingBlock:^(id obj, NSUInteger i, BOOL *stop) {
         
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle] pathForResource:obj ofType:@"wav"]];
-        
+                
         AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
         
         //NSLog(@"AUDIO: %@", audio);
@@ -182,6 +182,9 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     //NSLog(@"self.audio: %d", self.audio.count);
+    
+    // NSLog(@"%d", [self.audio count] * 16);
+
     return [self.audio count] * 16;
 }
 
@@ -190,7 +193,9 @@
     SamplerMatrixCell *cell =
         [view dequeueReusableCellWithReuseIdentifier:@"SamplerMatrixCell" forIndexPath:index];
     
-    cell.index = index.row; cell.delegate = self;
+    cell.index = index.row;
+    
+    cell.delegate = self;
         
     [cell color:[UIColor colorWithRed:100.0f/255.0f green:100.0f/255.0f blue:100.0f/255.0f alpha:0.5]];
     
