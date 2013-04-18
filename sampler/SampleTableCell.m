@@ -53,8 +53,14 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    NSPredicate *filter = [NSPredicate predicateWithFormat:@"file = %@", self.info[@"file"]];
+    
+    NSArray *filtered = [[defaults objectForKey:@"activeSamples"] filteredArrayUsingPredicate:filter];
+    
     if ( 0 == self.addIcon.tag )
-    {
+    {        
+        if ( filtered.count > 0 ) return; // we dont wanna add something that exists already
+        
         [self.addIcon setImage:[UIImage imageNamed: @"ic_tick.png"] forState:UIControlStateNormal];
         
         [self.addIcon setTag: 1];
@@ -64,7 +70,7 @@
         [samples addObject: self.info];
         
         [defaults setObject:samples forKey:@"activeSamples"];
-        
+                
         [UIView animateWithDuration:0.5 animations:^{
             
             [self.activationFlag setAlpha:1];
@@ -75,12 +81,18 @@
                 
                 [self.activationFlag setAlpha:0];
                 
-            } completion:^(BOOL finished) { /* f*** u in your blurry ass */ }];
-
-        }];        
+            } completion:^(BOOL finished) { /**/ }];
+            
+        }];
     }
     else
     {
+        NSMutableArray *samples = [[NSMutableArray alloc] initWithArray:[defaults objectForKey:@"activeSamples"]];
+        
+        [samples removeObject:self.info];
+                
+        [defaults setObject:samples forKey:@"activeSamples"];
+
         [self.addIcon setImage:[UIImage imageNamed: @"ic_cross.png"] forState:UIControlStateNormal];
         
         [self.addIcon setTag: 0];
