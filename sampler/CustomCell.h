@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *trackLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *trackLabel; // todo : make this private, and add a setter method
 
 @end
