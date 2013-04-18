@@ -128,7 +128,7 @@
                                     <action selector="playRecording:" destination="2" eventType="touchUpInside" id="HMz-FV-2Rj"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="Was-co-PV0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="Was-co-PV0">
                                 <rect key="frame" x="376" y="133" width="604" height="419"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
@@ -379,8 +379,6 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="playRecording:"/>
-                <relationship kind="action" name="startRecording:"/>
                 <relationship kind="outlet" name="KitTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="bundleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
