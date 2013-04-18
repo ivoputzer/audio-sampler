@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "BundleTableCell.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate, BundleTable>
+@interface ViewController : UIViewController <UITableViewDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 {
     AVAudioPlayer *audioPlayer;
     AVAudioRecorder *audioRecorder;

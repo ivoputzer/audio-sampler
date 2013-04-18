@@ -19,30 +19,22 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]; return self;
 }
 
 -(BundleTableCell*)setInfo:(NSArray*)info
 {
-    self.info = info;
     return self;
 }
 
-- (IBAction)insertToSampler:(id)sender {
-}
+/* addSample */
 
-- (IBAction)playInstrumentSelected:(id)sender {
-    
-    
-}
+/* playSample */
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+
+/*- (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-}
+}*/
 
 @end
