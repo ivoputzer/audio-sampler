@@ -81,7 +81,9 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSLog(@"bundleSelected: %d", [defaults integerForKey:@"bundle"]);
+    
     self.instruments = [[NSMutableArray alloc]initWithArray:[[[defaults objectForKey:@"bundles"] objectAtIndex:[defaults integerForKey:@"bundle"]]  objectForKey:@"files"]];
+    
     self.bundleLabel.text = self.bundles[[defaults integerForKey:@"bundle"]][@"bundle"];
     [self.previewTable reloadData];
     //NSLog(@"SELF.INSTRUMENT: %@", self.instruments);
@@ -246,10 +248,10 @@
         static NSString *CellIdentifier2 = @"BundleTableCell";
         BundleTableCell* cell2 = [[BundleTableCell alloc]init];
         cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier2 forIndexPath:indexPath];
-        cell2.typeOfInstrument.text = self.instruments[indexPath.row];
         cell2.tag = indexPath.row;
         [cell2 setDelegate:self];
-        return cell2;
+        
+        return [cell2 setInfo: self.instruments[indexPath.row] andTag:indexPath.row];
     }
 }
 

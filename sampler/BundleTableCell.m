@@ -8,7 +8,12 @@
 
 #import "BundleTableCell.h"
 
+@interface BundleTableCell()
+@property (nonatomic) NSArray* info;
+@end
+
 @implementation BundleTableCell
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -16,6 +21,12 @@
     if (self) {
         // Initialization code
     }
+    return self;
+}
+
+-(BundleTableCell*)setInfo:(NSArray*)info
+{
+    self.info = info;
     return self;
 }
 
