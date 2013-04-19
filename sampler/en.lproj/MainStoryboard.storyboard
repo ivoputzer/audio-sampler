@@ -78,7 +78,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.20000000000000015" contentMode="scaleToFill" id="DLj-ea-eqS">
+                            <view hidden="YES" alpha="0.20000000000000015" contentMode="scaleToFill" id="DLj-ea-eqS">
                                 <rect key="frame" x="876" y="105" width="104" height="456"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -92,7 +92,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="Was-co-PV0">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="Was-co-PV0">
                                 <rect key="frame" x="376" y="142" width="604" height="419"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
@@ -206,6 +206,7 @@
                         <outlet property="bundleName" destination="ngv-XE-SYO" id="GjL-gC-EeW"/>
                         <outlet property="bundlesTable" destination="QOn-wp-FmC" id="TK3-ya-Ddk"/>
                         <outlet property="samplesTable" destination="Was-co-PV0" id="uf7-gD-JTq"/>
+                        <outlet property="samplesTableLabel" destination="DLj-ea-eqS" id="413-Sv-dEU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -333,8 +334,6 @@
         <class className="SampleTableCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SampleTableCell.h"/>
             <relationships>
-                <relationship kind="action" name="add:" candidateClass="UIButton"/>
-                <relationship kind="action" name="play:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="activationFlag" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="addIcon" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="icon" candidateClass="UIImageView"/>
@@ -363,15 +362,13 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="bundleName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="bundlesTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="samplesTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="samplesTableLabel" candidateClass="UIView"/>
             </relationships>
         </class>
     </classes>

@@ -24,6 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *bundlesTable;
 
+@property (weak, nonatomic) IBOutlet UIView *samplesTableLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *bundleName;
 
 @end
@@ -132,7 +134,12 @@
 }
 
 -(void) selectBundle: (NSInteger) selection
-{   
+{
+    [self.samplesTable setHidden: false]; // todo : do this just once
+
+    [self.samplesTableLabel setHidden:false]; // todo : do this just once
+
+
     [self.bundleName setText: self.bundles[selection][@"bundle"]]; // fuck off, never change this again
     
     [self setSamples: [[NSMutableArray alloc] initWithArray: self.bundles[selection][@"files"]]];

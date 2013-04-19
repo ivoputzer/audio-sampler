@@ -46,11 +46,32 @@
      
     [self.name setText:info[@"name"]];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSPredicate *filter = [NSPredicate predicateWithFormat:@"file = %@", self.info[@"file"]];
+    
+    NSArray *filtered = [[defaults objectForKey:@"activeSamples"] filteredArrayUsingPredicate:filter];
+
+    if ( filtered.count > 0 )
+    {
+        [self.addIcon setTag: 1];
+        
+        [self.addIcon setImage:[UIImage imageNamed: @"ic_tick.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.addIcon setTag: 0];
+
+        [self.addIcon setImage:[UIImage imageNamed: @"ic_cross.png"] forState:UIControlStateNormal];
+    }
+    
     return self;
 }
 
 - (IBAction)add:(UIButton*)sender // could become remove
 {
+    NSLog(@"info %@", self.info[@"file"]);
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSPredicate *filter = [NSPredicate predicateWithFormat:@"file = %@", self.info[@"file"]];
