@@ -71,8 +71,14 @@
             @"bundle" : @"Synth Kit",
             @"icon": @"bundle_ic_synth.png",
             @"files" : @[
-                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
-                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+                 @{@"name": @"Poliphony 1 - c2", @"icon": @"bundle_ic_synth.png", @"file": @"bundle_synth_kit_poly_1_c2"},
+                 @{@"name": @"Poliphony 5 - c4", @"icon": @"bundle_ic_synth.png", @"file": @"bundle_synth_kit_poly_5_c4"},
+                 @{@"name": @"Poliphony 7 - c2", @"icon": @"bundle_ic_synth.png", @"file": @"bundle_synth_kit_poly_7_c2"},
+                 @{@"name": @"Poliphony 7 - c3", @"icon": @"bundle_ic_synth.png", @"file": @"bundle_synth_kit_poly_7_c3"},
+                 @{@"name": @"Poliphony 7 - c4", @"icon": @"bundle_ic_synth.png", @"file": @"bundle_synth_kit_poly_7_c4"},
+                 @{@"name": @"Poliphony 9 - c2", @"icon": @"bundle_ic_synth.png", @"file": @"bundle_synth_kit_poly_9_c2"},
+                 @{@"name": @"Poliphony 9 - c4", @"icon": @"bundle_ic_synth.png", @"file": @"bundle_synth_kit_poly_9_c4"},
+                 @{@"name": @"Poliphony 13 - c4", @"icon": @"bundle_ic_synth.png", @"file": @"bundle_synth_kit_poly_13_c4"}
             ]
         },
                        
@@ -92,7 +98,63 @@
                 @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
                 @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
             ]
+        },
+
+       @{
+            @"bundle" : @"Flute Kit",
+            @"icon": @"bundle_ic_flute.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+            ]
+       },
+                       
+       @{
+            @"bundle" : @"Sax Kit",
+            @"icon": @"bundle_ic_sax.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+            ]
+       },
+       
+       @{
+            @"bundle" : @"Violin Kit",
+            @"icon": @"bundle_ic_violin.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+            ]
+       },
+        
+       @{
+                       
+            @"bundle" : @"Bells Kit",
+            @"icon": @"bundle_ic_bell.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+            ]
+        },
+        
+        @{
+            @"bundle" : @"Acoustic Guitar Kit",
+            @"icon": @"bundle_ic_guitar.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+            ]
+        },
+        
+        @{
+            @"bundle" : @"Electric Guitar Kit",
+            @"icon": @"bundle_ic_ac_guitar.png",
+            @"files" : @[
+                @{@"name": @"Electric Hi-Hat (open)", @"icon": @"bundle_ic_hihat.png", @"file": @"bundle_drum_kit_el_hihat_open"},
+                @{@"name": @"Electric Snare", @"icon": @"bundle_ic_snare.png", @"file": @"bundle_drum_kit_el_snare"}
+            ]
         }
+
     ]]];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
