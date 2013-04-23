@@ -21,10 +21,12 @@
 @property (strong, nonatomic) NSMutableArray* samples;
 
 @property (weak, nonatomic) IBOutlet UITableView *samplesTable;
+@property (weak, nonatomic) IBOutlet UIImageView *second_table;
 
 @property (weak, nonatomic) IBOutlet UITableView *bundlesTable;
 
 @property (weak, nonatomic) IBOutlet UIView *samplesTableLabel;
+@property (weak, nonatomic) IBOutlet UIView *viewSamplesTable;
 
 @property (weak, nonatomic) IBOutlet UILabel *bundleName;
 
@@ -37,6 +39,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureDetected:)];
+    
+    [self.viewSamplesTable addGestureRecognizer:gesture];
     
     [self.navigationController.navigationBar setTintColor: [UIColor grayColor]];
      
@@ -164,7 +170,6 @@
     [defaults setObject:@[] forKey:@"activeSamples"];
 }
 
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return 1; }
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
@@ -174,9 +179,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)index
 {
-    if ( self.bundlesTable == table ) // the one on the left
-    {        
+    if ( self.bundlesTable == table) // the one on the left
+    {       
+        
         BundleTableCell *cell = [table dequeueReusableCellWithIdentifier:@"BundleTableCell" forIndexPath:index];
+        
+        if (cell == nil) {
+            cell = [[BundleTableCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"BundleTableCell"];
+
+        }
 
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
         
@@ -192,21 +203,32 @@
 
 - (void)tableView:(UITableView *)table didSelectRowAtIndexPath:(NSIndexPath *)index
 {
-    if ( self.bundlesTable == table ){ [self selectBundle: index.row]; }
+    if ( self.bundlesTable == table){ [self selectBundle: index.row]; }
 }
 
 -(void) selectBundle: (NSInteger) selection
 {
-    [self.samplesTable setHidden: false]; // todo : do this just once
+    [self.samplesTable setHidden: false];
+    [self.second_table setHidden: false]; // todo : do this just once
 
     [self.samplesTableLabel setHidden:false]; // todo : do this just once
 
+    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
+        [self.viewSamplesTable setFrame:CGRectOffset(self.viewSamplesTable.frame, -300, 0)];
+    } completion:^(BOOL finished) {
+        /**/
+    }];
 
     [self.bundleName setText: self.bundles[selection][@"bundle"]]; // fuck off, never change this again
     
     [self setSamples: [[NSMutableArray alloc] initWithArray: self.bundles[selection][@"files"]]];
     
     [self.samplesTable reloadData];
+}
+
+- (void)swipeGestureDetected:(UISwipeGestureRecognizer*)sender
+{    
+    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionAllowAnimatedContent animations:^ { [self.viewSamplesTable setFrame:CGRectOffset(self.viewSamplesTable.frame, 300, 0)];} completion:^ (BOOL finished){/**/}];
 }
 
 @end

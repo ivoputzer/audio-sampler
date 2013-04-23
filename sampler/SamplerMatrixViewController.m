@@ -6,11 +6,14 @@
 //  Copyright (c) 2013 Ivo von Putzer. All rights reserved.
 //
 
+#define OFFSET 3
+#define HEIGHT_LABEL 60
+
 #import "SamplerMatrixViewController.h"
 
 #import "SamplerMatrixCell.h"
 
-@interface SamplerMatrixViewController () <UICollectionViewDelegate, UICollectionViewDataSource, AVAudioPlayerDelegate, SamplerMatrixDelegate>
+@interface SamplerMatrixViewController () <UICollectionViewDelegate, UICollectionViewDataSource, AVAudioPlayerDelegate, SamplerMatrixDelegate, UIScrollViewDelegate>
 
 @property NSMutableArray *matrix; // holds the pointers for all cells
 
@@ -18,9 +21,14 @@
 
 @property (strong, nonatomic) NSTimer *timer;
 
+@property (nonatomic) BOOL statusShowInstruments;
+
 @property int current; // [0-15] -> if 15 reset to 0
+@property (weak, nonatomic) IBOutlet UIView *viewInstruments;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewInstruments;
 
 @property (weak, nonatomic) IBOutlet UIView *timeline;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonShowHideInstruments;
 
 @end
 
@@ -31,6 +39,16 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]; return self;
+}
+- (IBAction)closeButton:(id)sender {
+    
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"SCROLLING, %f", scrollView.contentOffset.y);
+    if(scrollView != self.scrollViewInstruments) [self.scrollViewInstruments setContentOffset:scrollView.contentOffset];
 }
 
 - (void)viewDidLoad
@@ -44,6 +62,91 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     [self loadAudio: [defaults objectForKey:@"activeSamples"] ];
+    
+    [self.scrollViewInstruments setContentSize:CGSizeMake(self.viewInstruments.frame.size.width, self.viewInstruments.frame.size.height)];
+    [self.scrollViewInstruments setDelegate:self];
+    
+    [self drawLabel:[defaults objectForKey:@"activeSamples"]];
+}
+
+
+- (IBAction)showInstruments:(id)sender {
+    self.statusShowInstruments = !self.statusShowInstruments;
+    
+    NSLog(@"ACTIVE %d", self.statusShowInstruments);
+    
+    (self.statusShowInstruments)?[self.buttonShowHideInstruments setTitle:@"Hide Instruments"]:[self.buttonShowHideInstruments setTitle:@"Show Instruments"];
+    
+    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionAllowAnimatedContent animations:^{[self.scrollViewInstruments setFrame:CGRectOffset(self.scrollViewInstruments.frame, (self.statusShowInstruments)?280:-280, 0)];} completion:nil];
+    
+    
+}
+
+
+-(void)drawLabel:(NSArray*)samples
+{    
+    for (int i = 0; i<samples.count; i++) {
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cell.png"]];
+        if (i == 0) {
+            
+            [imageView setFrame:CGRectMake(self.viewInstruments.frame.origin.x+4, 0, self.viewInstruments.frame.size.width, HEIGHT_LABEL)];
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(self.viewInstruments.frame.origin.x+4, 0, self.viewInstruments.frame.size.width, HEIGHT_LABEL)];
+            
+            label.text = samples[i][@"name"];
+            //[label setBackgroundColor:[UIColor colorWithRed:100/255 green:100/255 blue:100/255 alpha:0.5]];
+            [label setBackgroundColor:[UIColor clearColor]];
+            [label setTextColor:[UIColor whiteColor]];
+            
+            [self.viewInstruments addSubview:imageView];
+            [self.viewInstruments addSubview:label];
+            
+        }
+        else{
+            
+            CGRect frame = CGRectMake(self.viewInstruments.frame.origin.x+4, HEIGHT_LABEL*i+OFFSET*i, self.viewInstruments.frame.size.width, HEIGHT_LABEL);
+            
+            [imageView setFrame:frame];
+            UILabel *label = [[UILabel alloc]initWithFrame:frame];
+            
+            label.text = samples[i][@"name"];
+            //[label setBackgroundColor:[UIColor colorWithRed:100/255 green:100/255 blue:100/255 alpha:0.5]];
+            [label setBackgroundColor:[UIColor clearColor]];
+            [label setTextColor:[UIColor whiteColor]];
+            
+            [self.viewInstruments addSubview:imageView];
+            [self.viewInstruments addSubview:label];
+        }
+    }
+    
+    
+}
+
+-(UIImage *) screenshot
+{
+    
+    CGRect rect;
+    rect=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context=UIGraphicsGetCurrentContext();
+    [self.view.layer renderInContext:context];
+    
+    UIImage *image=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+- (IBAction)shareButton:(id)sender {
+        NSString *textToShare;
+            textToShare = [NSString stringWithFormat:
+                           @"Hey I'm using Audio-Sampler!"];
+    [self.timeline setAlpha:0];
+        NSArray *activityToShare = @[textToShare,[self screenshot]];
+    [self.timeline setAlpha:1];
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityToShare applicationActivities:nil];
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated { [self startAudio]; }

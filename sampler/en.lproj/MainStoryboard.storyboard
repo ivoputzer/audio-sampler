@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="bXm-zv-dhp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,14 +9,14 @@
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pattern.jpg" id="Kce-sx-iAh">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="775"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="QOn-wp-FmC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
+                                <rect key="frame" x="0.0" y="10" width="320" height="750"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <color key="separatorColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,13 +73,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ngv-XE-SYO">
-                                <rect key="frame" x="376" y="51" width="540" height="64"/>
+                                <rect key="frame" x="376" y="56" width="540" height="64"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="58"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" alpha="0.20000000000000015" contentMode="scaleToFill" id="DLj-ea-eqS">
-                                <rect key="frame" x="876" y="105" width="104" height="456"/>
+                                <rect key="frame" x="876" y="105" width="104" height="520"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Active     Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Qm-hx-Est">
@@ -93,7 +93,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="Was-co-PV0">
-                                <rect key="frame" x="376" y="142" width="604" height="419"/>
+                                <rect key="frame" x="376" y="142" width="604" height="483"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="0.10000000000000001" colorSpace="deviceRGB"/>
                                 <prototypes>
@@ -172,7 +172,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="64z-UN-cyY">
-                                <rect key="frame" x="0.0" y="649" width="320" height="55"/>
+                                <rect key="frame" x="376" y="709" width="604" height="59"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
@@ -183,7 +183,7 @@
                                     <color key="titleColor" red="0.57019771890000004" green="0.65580538340000005" blue="0.74998007020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3Nw-0P-CIc" kind="push" id="9n4-P5-Esb"/>
+                                    <segue destination="3Nw-0P-CIc" kind="modal" id="u7E-Dn-abO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" text="HAI AGGIUNTO UN NUOVO SAMPLE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8lo-gV-EDP">
@@ -194,6 +194,14 @@
                                 <color key="textColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.9960784912109375" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="imageCell.png" id="Ax7-wc-fLY">
+                                <rect key="frame" x="0.0" y="9" width="320" height="751"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="second_table.png" id="L8u-7W-hFk">
+                                <rect key="frame" x="376" y="142" width="604" height="483"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -201,12 +209,14 @@
                     <navigationItem key="navigationItem" id="U6d-XV-vDB">
                         <barButtonItem key="rightBarButtonItem" title="Download Kit" id="DIm-Kh-j5T"/>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="bundleName" destination="ngv-XE-SYO" id="GjL-gC-EeW"/>
                         <outlet property="bundlesTable" destination="QOn-wp-FmC" id="TK3-ya-Ddk"/>
                         <outlet property="samplesTable" destination="Was-co-PV0" id="uf7-gD-JTq"/>
                         <outlet property="samplesTableLabel" destination="DLj-ea-eqS" id="413-Sv-dEU"/>
+                        <outlet property="second_table" destination="L8u-7W-hFk" id="Idy-eH-sBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -219,20 +229,43 @@
             <objects>
                 <viewController id="3Nw-0P-CIc" customClass="SamplerMatrixViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1j6-ca-iwb">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="iHl-3r-cPm">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="OXM-eR-0It">
+                                        <color key="tintColor" red="1" green="0.0" blue="0.086274512110000007" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="3Nw-0P-CIc" id="blr-4I-o8O"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MAC-vd-NR8"/>
+                                    <barButtonItem title="Show Instruments" id="T2W-H8-7Bv">
+                                        <connections>
+                                            <action selector="showInstruments:" destination="3Nw-0P-CIc" id="U9P-9F-BHs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Share" id="jOM-Os-F2K">
+                                        <connections>
+                                            <action selector="shareButton:" destination="3Nw-0P-CIc" id="I8w-QM-bcy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pattern.jpg" id="Qr6-yj-tSE">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="vn7-nn-C5I">
-                                <rect key="frame" x="964" y="0.0" width="60" height="704"/>
+                                <rect key="frame" x="964" y="44" width="60" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.89836054649999997" green="0.95499904530000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="zlo-LU-Y39">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="44" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="0.0" id="xj4-xh-LTA">
@@ -279,45 +312,46 @@
                                     <outlet property="delegate" destination="3Nw-0P-CIc" id="fSd-gS-j53"/>
                                 </connections>
                             </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NLH-Gf-FqJ">
+                                <rect key="frame" x="-280" y="54" width="280" height="2000"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="2dy-1K-Ds0">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="2000"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="3Nw-0P-CIc" id="uEx-5f-Y9f"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3Au-M3-L4S"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="buttonShowHideInstruments" destination="T2W-H8-7Bv" id="xPy-Tr-5Yq"/>
+                        <outlet property="scrollViewInstruments" destination="NLH-Gf-FqJ" id="U23-jw-NQH"/>
                         <outlet property="timeline" destination="vn7-nn-C5I" id="bPJ-mr-iuR"/>
+                        <outlet property="viewInstruments" destination="2dy-1K-Ds0" id="kMS-CC-Si3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XX-IF-ubK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1185" y="-267"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jG3-de-18K">
-            <objects>
-                <navigationController id="bXm-zv-dhp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JGt-eD-vST">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="GTE-ei-pYb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gKt-Sp-2Uv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-900" y="-267"/>
-        </scene>
     </scenes>
     <resources>
         <image name="ic_cross.png" width="48" height="48"/>
         <image name="ic_play.png" width="48" height="48"/>
         <image name="ic_round.png" width="48" height="48"/>
+        <image name="imageCell.png" width="640" height="1418"/>
         <image name="music.png" width="512" height="512"/>
         <image name="pattern.jpg" width="1920" height="1200"/>
+        <image name="second_table.png" width="604" height="483"/>
     </resources>
     <classes>
         <class className="BundleTableCell" superclassName="UITableViewCell">
@@ -343,14 +377,19 @@
         <class className="SamplerMatrixCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SamplerMatrixCell.h"/>
             <relationships>
-                <relationship kind="action" name="click:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="SamplerMatrixViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SamplerMatrixViewController.h"/>
             <relationships>
+                <relationship kind="action" name="closeButton:"/>
+                <relationship kind="action" name="shareButton:"/>
+                <relationship kind="action" name="showInstruments:"/>
+                <relationship kind="outlet" name="buttonShowHideInstruments" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="scrollViewInstruments" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="timeline" candidateClass="UIView"/>
+                <relationship kind="outlet" name="viewInstruments" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
@@ -369,6 +408,8 @@
                 <relationship kind="outlet" name="bundlesTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="samplesTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="samplesTableLabel" candidateClass="UIView"/>
+                <relationship kind="outlet" name="second_table" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="viewSamplesTable" candidateClass="UIView"/>
             </relationships>
         </class>
     </classes>

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 @interface SamplerMatrixViewController : UIViewController
 @property (nonatomic) int bundleSelected;
